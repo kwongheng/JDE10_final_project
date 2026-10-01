@@ -8,12 +8,11 @@
 # META   },
 # META   "dependencies": {
 # META     "lakehouse": {
-# META       "default_lakehouse": "a056a1f4-8806-44a1-a656-fa345bd3cb28",
-# META       "default_lakehouse_name": "NHL_db",
-# META       "default_lakehouse_workspace_id": "0c230c13-c243-4a72-b362-76b949c3f17f",
+# META       "default_lakehouse_name": "",
+# META       "default_lakehouse_workspace_id": "",
 # META       "known_lakehouses": [
 # META         {
-# META           "id": "a056a1f4-8806-44a1-a656-fa345bd3cb28"
+# META           "id": "13efe94d-6710-492a-87f5-be3b963bbad9"
 # META         }
 # META       ]
 # META     }

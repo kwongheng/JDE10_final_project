@@ -8,12 +8,12 @@
 # META   },
 # META   "dependencies": {
 # META     "lakehouse": {
-# META       "default_lakehouse": "a056a1f4-8806-44a1-a656-fa345bd3cb28",
-# META       "default_lakehouse_name": "NHL_db",
-# META       "default_lakehouse_workspace_id": "0c230c13-c243-4a72-b362-76b949c3f17f",
+# META       "default_lakehouse": "13efe94d-6710-492a-87f5-be3b963bbad9",
+# META       "default_lakehouse_name": "NHL_data",
+# META       "default_lakehouse_workspace_id": "158c85ce-73a3-49f4-a3a4-a281a75c88f6",
 # META       "known_lakehouses": [
 # META         {
-# META           "id": "a056a1f4-8806-44a1-a656-fa345bd3cb28"
+# META           "id": "13efe94d-6710-492a-87f5-be3b963bbad9"
 # META         }
 # META       ]
 # META     }
@@ -70,8 +70,8 @@ from pyspark.sql.utils import AnalysisException
 
 # CELL ********************
 
-WORKSPACE: str = "JDE10"
-LAKEHOUSE: str = "NHL_db"
+WORKSPACE: str = "DeltaTables"
+LAKEHOUSE: str = "NHL_data"
 
 ABFSS_BASE_PATH: str = f"abfss://{WORKSPACE}@onelake.dfs.fabric.microsoft.com"
 LANDING_PATH: str = f"{ABFSS_BASE_PATH}/{LAKEHOUSE}.Lakehouse/Files/landing"
