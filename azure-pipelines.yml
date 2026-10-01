@@ -1,36 +1,32 @@
-trigger:
-  - main  # Adjust branch trigger as needed
+trigger: none
 
-# Link your Variable Group containing GITHUB_PAT
-variables:
-  - group: github-credentials
+pr: none
+
+schedules:
+  - cron: "0 0,12 * * *"
+    displayName: "Sync to GitHub every 12 hours"
+    branches:
+      include:
+        - main
+    always: true
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: "ubuntu-latest"
 
 steps:
-  # Step 1: Checkout repository (fetch full history for clean force push)
+
   - checkout: self
-    persistCredentials: true
     fetchDepth: 0
+    persistCredentials: false
 
-  # Step 2: Perform file/content modifications
   - script: |
-      echo "Automated update from Azure DevOps Pipeline: $(Build.BuildNumber)" >> update-log.txt
-    displayName: 'Modify/Generate files'
+      git config user.name "Azure DevOps"
+      git config user.email "azuredevops@localhost"
 
-  # Step 3: Configure Git & Force Push to GitHub using secret PAT
-  - script: |
-      # Configure Git identity
-      git config --global user.email "azure-pipeline@dev.azure.com"
-      git config --global user.name "Azure DevOps Pipeline"
+      git remote add github https://$(GITHUB_USERNAME):$(GITHUB_PAT)@github.com/kwongheng/JDE10_final_project.git
 
-      # Stage changes
-      git add .
-      
-      # Commit if there are changes
-      git diff-index --quiet HEAD || git commit -m "Automated push from Azure DevOps [Build $(Build.BuildNumber)]"
-
-      # Force push changes to GitHub to overwrite destination main branch
-      git push --force https://$(GITHUB_PAT)@github.com/kwongheng/JDE10_final_project.git HEAD:main
-    displayName: 'Commit and Force Push to GitHub'
+      git push github HEAD:main --force
+    displayName: "Force push Azure DevOps repository to GitHub"
+    env:
+      GITHUB_USERNAME: $(GITHUB_USERNAME)
+      GITHUB_PAT: $(GITHUB_PAT)
