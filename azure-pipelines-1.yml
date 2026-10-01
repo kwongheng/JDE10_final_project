@@ -1,0 +1,27 @@
+trigger:
+  - main  # Trigger pipeline whenever new commits are pushed to main in Azure DevOps
+
+variables:
+  - group: github-credentials # Pulls in $(GITHUB_PAT)
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  # 1. Checkout the Azure DevOps code with full history
+  - checkout: self
+    persistCredentials: true
+    fetchDepth: 0
+
+  # 2. Add GitHub remote and push commits
+  - script: |
+      # Configure Git identity
+      git config --global user.email "azure-pipeline@dev.azure.com"
+      git config --global user.name "Azure DevOps Pipeline"
+
+      # Add the GitHub target remote using your secret PAT
+      git remote add target-github https://$(GITHUB_PAT)@github.com/kwongheng/JDE10_final_project.git
+
+      # Sync and push all commits to GitHub main branch
+      git push target-github HEAD:main --force
+    displayName: 'Push Azure DevOps Commits to GitHub'
