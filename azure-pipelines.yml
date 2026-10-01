@@ -9,16 +9,17 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  # Step 1: Checkout repository
+  # Step 1: Checkout repository (fetch full history for clean force push)
   - checkout: self
     persistCredentials: true
+    fetchDepth: 0
 
   # Step 2: Perform file/content modifications
   - script: |
       echo "Automated update from Azure DevOps Pipeline: $(Build.BuildNumber)" >> update-log.txt
     displayName: 'Modify/Generate files'
 
-  # Step 3: Configure Git & Push to GitHub using secret PAT
+  # Step 3: Configure Git & Force Push to GitHub using secret PAT
   - script: |
       # Configure Git identity
       git config --global user.email "azure-pipeline@dev.azure.com"
@@ -30,7 +31,6 @@ steps:
       # Commit if there are changes
       git diff-index --quiet HEAD || git commit -m "Automated push from Azure DevOps [Build $(Build.BuildNumber)]"
 
-      # Push changes back to GitHub using the Secret PAT
-      # Format: https://<PAT>@github.com/<owner>/<repo>.git
-      git push https://$(GITHUB_PAT)@github.com/kwongheng/JDE10_final_project.git HEAD:main
-    displayName: 'Commit and Push to GitHub'
+      # Force push changes to GitHub to overwrite destination main branch
+      git push --force https://$(GITHUB_PAT)@github.com/kwongheng/JDE10_final_project.git HEAD:main
+    displayName: 'Commit and Force Push to GitHub'
