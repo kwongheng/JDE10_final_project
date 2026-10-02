@@ -115,6 +115,7 @@ A Fabric **Data Pipeline** chains the notebooks in dependency order:
 ## Azure DevOps
 
 - **Repos:** notebooks and pipeline definitions are stored in Git through Fabric's Git integration.
+  - **folder structure:** to setup the repo effective, Azure Fabric workspace are mapped to folders, this allow better structuring of the project
 - **Branching:** work is done on feature branches and merged by pull request.
 - **Boards:** work items track features and fixes.
 - **Pipelines:** automated checks and deployment between workspaces.
