@@ -1,0 +1,355 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "d44682378839ba022303",
+  "position": {
+    "x": 9.68501289093151,
+    "y": 0,
+    "z": 0,
+    "height": 637.27384822329338,
+    "width": 1410.1378769196281,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "betting_all_samples"
+                    }
+                  },
+                  "Property": "Bet_Category_Label"
+                }
+              },
+              "queryRef": "betting_all_samples.Bet_Category_Label",
+              "nativeQueryRef": "Bet_Category_Label",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "betting_all_samples"
+                        }
+                      },
+                      "Property": "model_prob"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(betting_all_samples.model_prob)",
+              "nativeQueryRef": "Average of model_prob"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "betting_all_samples"
+                        }
+                      },
+                      "Property": "book_prob"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(betting_all_samples.book_prob)",
+              "nativeQueryRef": "Average of book_prob"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "betting_all_samples"
+                        }
+                      },
+                      "Property": "EV_Decimal"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(betting_all_samples.EV_Decimal)",
+              "nativeQueryRef": "Average of EV_Decimal"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "betting_all_samples"
+                      }
+                    },
+                    "Property": "model_prob"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "enableTitleDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a1df6909e20174d3cd09",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "betting_all_samples"
+                  }
+                },
+                "Property": "book_prob"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "09d999908858e8835c21",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "betting_all_samples"
+                  }
+                },
+                "Property": "model_prob"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "40459db77660e03b5393",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "betting_all_samples"
+                      }
+                    },
+                    "Property": "model_prob"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "betting_all_samples"
+                          }
+                        },
+                        "Property": "model_prob"
+                      }
+                    },
+                    "Function": 1
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "2b08ab97b1992910c065",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "betting_all_samples"
+                      }
+                    },
+                    "Property": "book_prob"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "betting_all_samples"
+                          }
+                        },
+                        "Property": "book_prob"
+                      }
+                    },
+                    "Function": 1
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "db9af221854b6bed60cc",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "betting_all_samples"
+                      }
+                    },
+                    "Property": "expected_value_pct"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "betting_all_samples"
+                          }
+                        },
+                        "Property": "expected_value_pct"
+                      }
+                    },
+                    "Function": 1
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "147b357892ccdb0bb89d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "betting_all_samples"
+              }
+            },
+            "Property": "Bet_Category_Label"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8dba9b30c1b2783bb78d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "betting_all_samples"
+                  }
+                },
+                "Property": "EV_Decimal"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,546 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "2f17f8b2a87330881587",
+  "position": {
+    "x": 10.851097649282069,
+    "y": 0,
+    "z": 0,
+    "height": 1080.769325868494,
+    "width": 1909.7931862736441,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "lineClusteredColumnComboChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "betting_all_samples"
+                    }
+                  },
+                  "Property": "picked_side"
+                }
+              },
+              "queryRef": "betting_all_samples.picked_side",
+              "nativeQueryRef": "picked_side",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "betting_all_samples"
+                        }
+                      },
+                      "Property": "expected_value_pct"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(betting_all_samples.expected_value_pct)",
+              "nativeQueryRef": "Average of expected_value_pct"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Arithmetic": {
+                  "Left": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "betting_all_samples"
+                            }
+                          },
+                          "Property": "book_prob"
+                        }
+                      },
+                      "Function": 1
+                    }
+                  },
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "betting_all_samples"
+                                }
+                              },
+                              "Property": "book_prob"
+                            }
+                          },
+                          "Function": 1
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
+                }
+              },
+              "queryRef": "Sum(betting_all_samples.book_prob)",
+              "nativeQueryRef": "%GT Average of book_prob"
+            },
+            {
+              "field": {
+                "Arithmetic": {
+                  "Left": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "betting_all_samples"
+                            }
+                          },
+                          "Property": "model_prob"
+                        }
+                      },
+                      "Function": 1
+                    }
+                  },
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "betting_all_samples"
+                                }
+                              },
+                              "Property": "model_prob"
+                            }
+                          },
+                          "Function": 1
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
+                }
+              },
+              "queryRef": "Sum(betting_all_samples.model_prob)",
+              "nativeQueryRef": "%GT Average of model_prob"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "betting_all_samples"
+                      }
+                    },
+                    "Property": "expected_value_pct"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "valueAxis": [
+        {
+          "properties": {
+            "logAxisScale": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "invertAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Expected Value (EV%) - Model Probability Vs Book Probablity'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {}
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Straight line'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b517a3c06ee63466ec79",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "betting_all_samples"
+              }
+            },
+            "Property": "game_date"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "37fbef73680c00b09253",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "betting_all_samples"
+              }
+            },
+            "Property": "picked_side"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cc109e4da32e220d8a7e",
+        "ordinal": 2,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "betting_all_samples"
+                  }
+                },
+                "Property": "book_prob"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "8b3c598771102a46b2ed",
+        "ordinal": 3,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "betting_all_samples"
+                  }
+                },
+                "Property": "expected_value_pct"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "c98b4e28c38c0007da2e",
+        "ordinal": 4,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "betting_all_samples"
+                  }
+                },
+                "Property": "model_prob"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "7fb04633b3120ca18a17",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "betting_all_samples"
+                  }
+                },
+                "Property": "book_prob"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "dd00169d5d5880b9be80",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "betting_all_samples"
+                  }
+                },
+                "Property": "model_prob"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "856b83c81bda586a3604",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "betting_all_samples"
+                  }
+                },
+                "Property": "expected_value_pct"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6c9abac121b0e6b8ce5e",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "betting_all_samples"
+                      }
+                    },
+                    "Property": "book_prob"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "betting_all_samples"
+                          }
+                        },
+                        "Property": "book_prob"
+                      }
+                    },
+                    "Function": 1
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2000fa7cb5d29ac03973",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "betting_all_samples"
+                      }
+                    },
+                    "Property": "model_prob"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "betting_all_samples"
+                          }
+                        },
+                        "Property": "model_prob"
+                      }
+                    },
+                    "Function": 1
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

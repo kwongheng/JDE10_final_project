@@ -1,0 +1,85 @@
+table top_3_teams_per_market
+	lineageTag: 3955b59c-466a-4643-aad4-e565c5822bd1
+	sourceLineageTag: [gold].[top_3_teams_per_market]
+
+	column Category
+		dataType: string
+		lineageTag: b60cb7b1-338c-45d8-9339-ec1859e2067d
+		sourceLineageTag: Category
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: int64
+		formatString: 0
+		lineageTag: aa554220-9dba-49c6-8c35-26fc86977fef
+		sourceLineageTag: Rank
+		summarizeBy: none
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column Team
+		dataType: string
+		lineageTag: 9a9b55e5-2917-4cd8-8b62-55c07bd16880
+		sourceLineageTag: Team
+		summarizeBy: none
+		sourceColumn: Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column Qualified_Bets
+		dataType: int64
+		formatString: 0
+		lineageTag: e1b304f2-d014-4a49-971e-078ce3394648
+		sourceLineageTag: Qualified_Bets
+		summarizeBy: none
+		sourceColumn: Qualified_Bets
+
+		annotation SummarizationSetBy = Automatic
+
+	column Winning_Bets
+		dataType: int64
+		formatString: 0
+		lineageTag: ffd1527d-1a7c-474b-bbaf-304942130c63
+		sourceLineageTag: Winning_Bets
+		summarizeBy: none
+		sourceColumn: Winning_Bets
+
+		annotation SummarizationSetBy = Automatic
+
+	column Win_Rate_Pct
+		dataType: string
+		lineageTag: acea39e0-0940-4dbc-aabc-30b149c3ac93
+		sourceLineageTag: Win_Rate_Pct
+		summarizeBy: none
+		sourceColumn: Win_Rate_Pct
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column Win_Rate_Num =
+			
+			VALUE(SUBSTITUTE('top_3_teams_per_market'[Win_Rate_Pct], "%", ""))
+		lineageTag: a94e185f-9124-40c1-833e-428342ce5f6c
+		summarizeBy: none
+		expressionContext: userContext
+
+		changedProperty = Name
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition top_3_teams_per_market = entity
+		mode: directLake
+		source
+			entityName: top_3_teams_per_market
+			schemaName: gold
+			expressionSource: 'DirectLake - NHL_db'
+

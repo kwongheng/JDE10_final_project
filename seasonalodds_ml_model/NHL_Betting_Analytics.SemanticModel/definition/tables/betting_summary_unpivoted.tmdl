@@ -1,0 +1,48 @@
+table betting_summary_unpivoted
+	lineageTag: c54ddc1b-6e4f-43e3-b3fb-86236b2c1d9a
+	sourceLineageTag: [gold].[betting_summary_unpivoted]
+
+	column Category
+		dataType: string
+		lineageTag: 16d87767-1d6d-43cf-853f-c9de7771dbb1
+		sourceLineageTag: Category
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Metric_Name
+		dataType: string
+		lineageTag: 8fc7cbd9-3926-49b1-ad26-7390be764301
+		sourceLineageTag: Metric_Name
+		summarizeBy: none
+		sourceColumn: Metric_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Game_Count
+		dataType: int64
+		formatString: 0
+		lineageTag: 722310d4-5c5e-417e-932e-179670241606
+		sourceLineageTag: Game_Count
+		summarizeBy: sum
+		sourceColumn: Game_Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column Metric_Group
+		dataType: string
+		lineageTag: fa1f0d72-d691-47b6-8179-cd468995e831
+		sourceLineageTag: Metric_Group
+		summarizeBy: none
+		sourceColumn: Metric_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition betting_summary_unpivoted = entity
+		mode: directLake
+		source
+			entityName: betting_summary_unpivoted
+			schemaName: gold
+			expressionSource: 'DirectLake - NHL_db'
+

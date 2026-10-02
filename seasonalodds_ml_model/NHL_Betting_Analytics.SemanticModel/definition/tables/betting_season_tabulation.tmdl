@@ -1,0 +1,88 @@
+table betting_season_tabulation
+	lineageTag: a1fa39a4-e9a3-4997-9a94-d536e3b9cb91
+	sourceLineageTag: [gold].[betting_season_tabulation]
+
+	column Category
+		dataType: string
+		lineageTag: e0a00bc0-a615-4d93-ba4e-1b64db28961c
+		sourceLineageTag: Category
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Season_Games
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e3b3453-d633-41e2-b5d2-b0b38b7f81d6
+		sourceLineageTag: Total_Season_Games
+		summarizeBy: none
+		sourceColumn: Total_Season_Games
+
+		annotation SummarizationSetBy = Automatic
+
+	column Qualified_Bets_Offered
+		dataType: int64
+		formatString: 0
+		lineageTag: a4fec7fd-17f1-4a26-acf3-96133c2a1a7f
+		sourceLineageTag: Qualified_Bets_Offered
+		summarizeBy: none
+		sourceColumn: Qualified_Bets_Offered
+
+		annotation SummarizationSetBy = Automatic
+
+	column Correct_Predictions_WIN
+		dataType: int64
+		formatString: 0
+		lineageTag: c8c5ef30-82a4-49ef-a6b9-888315014067
+		sourceLineageTag: Correct_Predictions_WIN
+		summarizeBy: none
+		sourceColumn: Correct_Predictions_WIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column Wrong_Predictions_LOSS
+		dataType: int64
+		formatString: 0
+		lineageTag: 491d7f58-861b-48c5-9c1b-5300e92a2d2e
+		sourceLineageTag: Wrong_Predictions_LOSS
+		summarizeBy: none
+		sourceColumn: Wrong_Predictions_LOSS
+
+		annotation SummarizationSetBy = Automatic
+
+	column No_Bets_Low_Confidence
+		dataType: int64
+		formatString: 0
+		lineageTag: 68c0a472-1c37-42e6-8d48-98afb5b5c127
+		sourceLineageTag: No_Bets_Low_Confidence
+		summarizeBy: none
+		sourceColumn: No_Bets_Low_Confidence
+
+		annotation SummarizationSetBy = Automatic
+
+	column Selective_Accuracy_Pct
+		dataType: string
+		lineageTag: e5e4130c-bd7a-45b4-a638-afb1860f410a
+		sourceLineageTag: Selective_Accuracy_Pct
+		summarizeBy: none
+		sourceColumn: Selective_Accuracy_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column Skipped_Games_Pct
+		dataType: string
+		lineageTag: 43e6d4bd-bbdc-479c-8de6-e5235e02ac7f
+		sourceLineageTag: Skipped_Games_Pct
+		summarizeBy: none
+		sourceColumn: Skipped_Games_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	partition betting_season_tabulation = entity
+		mode: directLake
+		source
+			entityName: betting_season_tabulation
+			schemaName: gold
+			expressionSource: 'DirectLake - NHL_db'
+
