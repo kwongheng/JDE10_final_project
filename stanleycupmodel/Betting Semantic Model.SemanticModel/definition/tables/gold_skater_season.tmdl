@@ -1,0 +1,253 @@
+table gold_skater_season
+	lineageTag: 2b456761-d62d-4205-829d-d5429cf8e638
+	sourceLineageTag: [gold].[skater_season]
+
+	column player_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b21c750-a750-4928-88c5-447323da6c42
+		sourceLineageTag: player_id
+		summarizeBy: sum
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: int64
+		formatString: 0
+		lineageTag: ee3beb54-83e7-4965-989c-1a1786dbd456
+		sourceLineageTag: season
+		summarizeBy: sum
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column season_start_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 02c06239-e767-4309-ac22-ad54302507d9
+		sourceLineageTag: season_start_year
+		summarizeBy: sum
+		sourceColumn: season_start_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column games_played
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a310e6b-6bfe-4e51-91e2-f7d6f60926f3
+		sourceLineageTag: games_played
+		summarizeBy: sum
+		sourceColumn: games_played
+
+		annotation SummarizationSetBy = Automatic
+
+	column goals
+		dataType: int64
+		formatString: 0
+		lineageTag: 46ffce73-ff22-4d98-b694-ef36fcabb3c0
+		sourceLineageTag: goals
+		summarizeBy: sum
+		sourceColumn: goals
+
+		annotation SummarizationSetBy = Automatic
+
+	column assists
+		dataType: int64
+		formatString: 0
+		lineageTag: e02e81db-f588-4516-9af0-480e3dd6a622
+		sourceLineageTag: assists
+		summarizeBy: sum
+		sourceColumn: assists
+
+		annotation SummarizationSetBy = Automatic
+
+	column points
+		dataType: int64
+		formatString: 0
+		lineageTag: 62cd9e8a-900e-438e-8f3e-8f9794429e57
+		sourceLineageTag: points
+		summarizeBy: sum
+		sourceColumn: points
+
+		annotation SummarizationSetBy = Automatic
+
+	column shots
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a5427df-f4fd-4ed1-8a3e-41e63967f7af
+		sourceLineageTag: shots
+		summarizeBy: sum
+		sourceColumn: shots
+
+		annotation SummarizationSetBy = Automatic
+
+	column hits
+		dataType: double
+		lineageTag: cbef6144-90e7-4404-85ec-464300555ed3
+		sourceLineageTag: hits
+		summarizeBy: sum
+		sourceColumn: hits
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pim
+		dataType: int64
+		formatString: 0
+		lineageTag: 37f275b5-15d0-4245-9ab7-7a81bac89e34
+		sourceLineageTag: pim
+		summarizeBy: sum
+		sourceColumn: pim
+
+		annotation SummarizationSetBy = Automatic
+
+	column plus_minus
+		dataType: int64
+		formatString: 0
+		lineageTag: f5682a17-e9c9-4090-b0ca-90e820dc130c
+		sourceLineageTag: plus_minus
+		summarizeBy: sum
+		sourceColumn: plus_minus
+
+		annotation SummarizationSetBy = Automatic
+
+	column pp_goals
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b241081-0803-431f-b92b-14fcba77e4fc
+		sourceLineageTag: pp_goals
+		summarizeBy: sum
+		sourceColumn: pp_goals
+
+		annotation SummarizationSetBy = Automatic
+
+	column pp_assists
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c51d549-4848-44b7-a5c9-36e1d7e94507
+		sourceLineageTag: pp_assists
+		summarizeBy: sum
+		sourceColumn: pp_assists
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_toi_seconds
+		dataType: int64
+		formatString: 0
+		lineageTag: 310b26f8-87f5-49ce-a342-212f88968c79
+		sourceLineageTag: total_toi_seconds
+		summarizeBy: sum
+		sourceColumn: total_toi_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column primary_team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9009f86e-681f-41d6-a501-b9fed43cd713
+		sourceLineageTag: primary_team_id
+		summarizeBy: sum
+		sourceColumn: primary_team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column firstname
+		dataType: string
+		lineageTag: 4b2290f6-a848-49c5-98b8-c3b08dca7e28
+		sourceLineageTag: firstname
+		summarizeBy: none
+		sourceColumn: firstname
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastname
+		dataType: string
+		lineageTag: 00ebc15d-3d86-44be-a3e5-544ac754e11b
+		sourceLineageTag: lastname
+		summarizeBy: none
+		sourceColumn: lastname
+
+		annotation SummarizationSetBy = Automatic
+
+	column birthdate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7106bd1c-fe2f-4d7a-98b7-64b8667aed63
+		sourceLineageTag: birthdate
+		summarizeBy: none
+		sourceColumn: birthdate
+
+		annotation SummarizationSetBy = Automatic
+
+	column primaryPosition
+		dataType: string
+		lineageTag: 3329861e-4698-4f47-9226-ac6a6052065f
+		sourceLineageTag: primaryPosition
+		summarizeBy: none
+		sourceColumn: primaryPosition
+
+		annotation SummarizationSetBy = Automatic
+
+	column nationality
+		dataType: string
+		lineageTag: fcf1aeca-ff9a-4cfe-aaf5-4e522359b11c
+		sourceLineageTag: nationality
+		summarizeBy: none
+		sourceColumn: nationality
+
+		annotation SummarizationSetBy = Automatic
+
+	column approx_age
+		dataType: int64
+		formatString: 0
+		lineageTag: 87f730df-ef2a-4073-9a6c-94a9dfe08e06
+		sourceLineageTag: approx_age
+		summarizeBy: sum
+		sourceColumn: approx_age
+
+		annotation SummarizationSetBy = Automatic
+
+	column points_per_game
+		dataType: double
+		lineageTag: 3bb9a8ea-b9ef-4dd3-950f-aa2aee605a5e
+		sourceLineageTag: points_per_game
+		summarizeBy: sum
+		sourceColumn: points_per_game
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_toi_minutes_per_game
+		dataType: double
+		lineageTag: c094c029-02e6-4478-9681-aaae60d3da3f
+		sourceLineageTag: avg_toi_minutes_per_game
+		summarizeBy: sum
+		sourceColumn: avg_toi_minutes_per_game
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column points_per_60
+		dataType: double
+		lineageTag: 82c87551-3297-4a30-beda-6aa36db73bf9
+		sourceLineageTag: points_per_60
+		summarizeBy: sum
+		sourceColumn: points_per_60
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gold_skater_season = entity
+		mode: directLake
+		source
+			entityName: skater_season
+			schemaName: gold
+			expressionSource: 'DirectLake - NHL_db'
+
+	changedProperty = Name
+

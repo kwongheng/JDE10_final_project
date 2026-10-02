@@ -1,0 +1,47 @@
+table actual_2020_21_results
+	lineageTag: 9582a807-9a54-40fb-8cb9-8fa52c747f8d
+	sourceLineageTag: [gold].[actual_2020_21_results]
+
+	column category
+		dataType: string
+		lineageTag: 3e70da9c-08ff-41cb-a071-6dc35a10e204
+		sourceLineageTag: category
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column winner_name
+		dataType: string
+		lineageTag: 0f772ec8-9b75-48a5-933b-87e81625fa61
+		sourceLineageTag: winner_name
+		summarizeBy: none
+		sourceColumn: winner_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column team
+		dataType: string
+		lineageTag: 175e4b46-6c1f-43c0-8ea0-2d4496b5462d
+		sourceLineageTag: team
+		summarizeBy: none
+		sourceColumn: team
+
+		annotation SummarizationSetBy = Automatic
+
+	column detail
+		dataType: string
+		lineageTag: f53bf7d8-a22e-4531-b2f6-fe2e7fb5cb89
+		sourceLineageTag: detail
+		summarizeBy: none
+		sourceColumn: detail
+
+		annotation SummarizationSetBy = Automatic
+
+	partition actual_2020_21_results = entity
+		mode: directLake
+		source
+			entityName: actual_2020_21_results
+			schemaName: gold
+			expressionSource: 'DirectLake - NHL_db'
+

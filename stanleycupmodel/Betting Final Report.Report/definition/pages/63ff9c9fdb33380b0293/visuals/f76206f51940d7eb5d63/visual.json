@@ -1,0 +1,230 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "f76206f51940d7eb5d63",
+  "position": {
+    "x": 1393.6739659367397,
+    "y": 189.97566909975669,
+    "z": 1000,
+    "height": 890.705596107056,
+    "width": 526.32603406326029,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "best_player_forecast_2021"
+                        }
+                      },
+                      "Property": "projected_rank"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(best_player_forecast_2021.projected_rank)",
+              "nativeQueryRef": "Rank",
+              "displayName": "Rank"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "best_player_forecast_2021"
+                    }
+                  },
+                  "Property": "firstName"
+                }
+              },
+              "queryRef": "best_player_forecast_2021.firstName",
+              "nativeQueryRef": "First Name",
+              "displayName": "First Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "best_player_forecast_2021"
+                    }
+                  },
+                  "Property": "lastName"
+                }
+              },
+              "queryRef": "best_player_forecast_2021.lastName",
+              "nativeQueryRef": "Last Name",
+              "displayName": "Last Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "best_player_forecast_2021"
+                    }
+                  },
+                  "Property": "teamName"
+                }
+              },
+              "queryRef": "best_player_forecast_2021.teamName",
+              "nativeQueryRef": "Team Name",
+              "displayName": "Team Name"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "best_player_forecast_2021"
+                        }
+                      },
+                      "Property": "proj_points_82gp"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(best_player_forecast_2021.proj_points_82gp)",
+              "nativeQueryRef": "Projected Points",
+              "displayName": "Projected Points"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "best_player_forecast_2021"
+                      }
+                    },
+                    "Property": "projected_rank"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 10 Projected Scorers — 2020-21 Season'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4c4410d110a5ae0610d7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "best_player_forecast_2021"
+                  }
+                },
+                "Property": "projected_rank"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "b",
+              "Entity": "best_player_forecast_2021",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 4,
+                  "Left": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "b"
+                            }
+                          },
+                          "Property": "projected_rank"
+                        }
+                      },
+                      "Function": 0
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "10L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

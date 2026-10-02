@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Betting Semantic Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1c006742-f98f-83e1-40e8-0ff627b7e65f"
+  }
+}

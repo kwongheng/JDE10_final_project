@@ -1,0 +1,119 @@
+table skater_validation_history
+	lineageTag: 1083b1e1-5e40-4fd6-b554-cc6f25ebecc5
+	sourceLineageTag: [gold].[skater_validation_history]
+
+	column as_of_season_start_year
+		dataType: int64
+		formatString: 0
+		lineageTag: af66c2ac-2f41-4f02-84bf-a7aed5199934
+		sourceLineageTag: as_of_season_start_year
+		summarizeBy: sum
+		sourceColumn: as_of_season_start_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 346156d0-281d-42f4-b1f5-3ec060126616
+		sourceLineageTag: player_id
+		summarizeBy: sum
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column firstName
+		dataType: string
+		lineageTag: 6067f28b-5251-4be5-91d9-b142ba385cf0
+		sourceLineageTag: firstName
+		summarizeBy: none
+		sourceColumn: firstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastName
+		dataType: string
+		lineageTag: 758fdcac-573d-4884-bc08-d1d8685d4082
+		sourceLineageTag: lastName
+		summarizeBy: none
+		sourceColumn: lastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column primaryPosition
+		dataType: string
+		lineageTag: 8fed4a97-8f10-4163-952e-e3780e987084
+		sourceLineageTag: primaryPosition
+		summarizeBy: none
+		sourceColumn: primaryPosition
+
+		annotation SummarizationSetBy = Automatic
+
+	column teamName
+		dataType: string
+		lineageTag: 34d787b3-3142-482e-b0f5-f97d57f8e925
+		sourceLineageTag: teamName
+		summarizeBy: none
+		sourceColumn: teamName
+
+		annotation SummarizationSetBy = Automatic
+
+	column proj_points_per_game
+		dataType: double
+		lineageTag: 279feeda-989b-4beb-b7db-88ee5030e74a
+		sourceLineageTag: proj_points_per_game
+		summarizeBy: sum
+		sourceColumn: proj_points_per_game
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column proj_points_82gp
+		dataType: double
+		lineageTag: 03b9ebe2-de89-483d-b059-d368994f93ad
+		sourceLineageTag: proj_points_82gp
+		summarizeBy: sum
+		sourceColumn: proj_points_82gp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column seasons_used
+		dataType: int64
+		formatString: 0
+		lineageTag: 704553da-360c-4221-9d56-be348e9e70f9
+		sourceLineageTag: seasons_used
+		summarizeBy: sum
+		sourceColumn: seasons_used
+
+		annotation SummarizationSetBy = Automatic
+
+	column projected_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 8259214b-2e15-4e13-b1c1-0c9dd6b25fa9
+		sourceLineageTag: projected_rank
+		summarizeBy: sum
+		sourceColumn: projected_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_next_season_points
+		dataType: int64
+		formatString: 0
+		lineageTag: ca1d1061-c179-4def-be50-bae14ac92e88
+		sourceLineageTag: actual_next_season_points
+		summarizeBy: sum
+		sourceColumn: actual_next_season_points
+
+		annotation SummarizationSetBy = Automatic
+
+	partition skater_validation_history = entity
+		mode: directLake
+		source
+			entityName: skater_validation_history
+			schemaName: gold
+			expressionSource: 'DirectLake - NHL_db'
+

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "da9db0ccbd6e8b9ca506",
+  "position": {
+    "x": 559.06323185011706,
+    "y": 52.459016393442617,
+    "z": 2002,
+    "height": 175.36299765807962,
+    "width": 353.72365339578454,
+    "tabOrder": 2002
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Playoff records in this games.csv dataset are only complete from the 2010-11 season onwards, so backtesting starts in 2009 (predicting that season).",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
