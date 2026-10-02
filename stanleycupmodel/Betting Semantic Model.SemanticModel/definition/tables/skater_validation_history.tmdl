@@ -1,11 +1,11 @@
 table skater_validation_history
-	lineageTag: 1083b1e1-5e40-4fd6-b554-cc6f25ebecc5
+	lineageTag: 383b1178-f571-49e5-85fd-324013d0f820
 	sourceLineageTag: [gold].[skater_validation_history]
 
 	column as_of_season_start_year
 		dataType: int64
 		formatString: 0
-		lineageTag: af66c2ac-2f41-4f02-84bf-a7aed5199934
+		lineageTag: d23d0c57-6bb3-4cad-88c7-49142705b841
 		sourceLineageTag: as_of_season_start_year
 		summarizeBy: sum
 		sourceColumn: as_of_season_start_year
@@ -15,7 +15,7 @@ table skater_validation_history
 	column player_id
 		dataType: int64
 		formatString: 0
-		lineageTag: 346156d0-281d-42f4-b1f5-3ec060126616
+		lineageTag: d49e46f7-385c-485a-a8ad-ee2ad3ea5da9
 		sourceLineageTag: player_id
 		summarizeBy: sum
 		sourceColumn: player_id
@@ -24,7 +24,7 @@ table skater_validation_history
 
 	column firstName
 		dataType: string
-		lineageTag: 6067f28b-5251-4be5-91d9-b142ba385cf0
+		lineageTag: 83f5be19-4ddd-42d5-bdc8-587bb3d4510d
 		sourceLineageTag: firstName
 		summarizeBy: none
 		sourceColumn: firstName
@@ -33,7 +33,7 @@ table skater_validation_history
 
 	column lastName
 		dataType: string
-		lineageTag: 758fdcac-573d-4884-bc08-d1d8685d4082
+		lineageTag: 36dac7a7-4536-4d5e-96d4-27cd49c84c3b
 		sourceLineageTag: lastName
 		summarizeBy: none
 		sourceColumn: lastName
@@ -42,7 +42,7 @@ table skater_validation_history
 
 	column primaryPosition
 		dataType: string
-		lineageTag: 8fed4a97-8f10-4163-952e-e3780e987084
+		lineageTag: 032a5eaa-8387-4d1d-a2c1-645dff6c0fc0
 		sourceLineageTag: primaryPosition
 		summarizeBy: none
 		sourceColumn: primaryPosition
@@ -51,7 +51,7 @@ table skater_validation_history
 
 	column teamName
 		dataType: string
-		lineageTag: 34d787b3-3142-482e-b0f5-f97d57f8e925
+		lineageTag: b0763e8e-0dd2-44ae-8f8a-90a8284b415f
 		sourceLineageTag: teamName
 		summarizeBy: none
 		sourceColumn: teamName
@@ -60,7 +60,7 @@ table skater_validation_history
 
 	column proj_points_per_game
 		dataType: double
-		lineageTag: 279feeda-989b-4beb-b7db-88ee5030e74a
+		lineageTag: bf5ffd37-3e5f-4419-a08c-176fe998b90e
 		sourceLineageTag: proj_points_per_game
 		summarizeBy: sum
 		sourceColumn: proj_points_per_game
@@ -71,7 +71,7 @@ table skater_validation_history
 
 	column proj_points_82gp
 		dataType: double
-		lineageTag: 03b9ebe2-de89-483d-b059-d368994f93ad
+		lineageTag: b139084d-5e45-44ca-925b-54a8b507802d
 		sourceLineageTag: proj_points_82gp
 		summarizeBy: sum
 		sourceColumn: proj_points_82gp
@@ -83,7 +83,7 @@ table skater_validation_history
 	column seasons_used
 		dataType: int64
 		formatString: 0
-		lineageTag: 704553da-360c-4221-9d56-be348e9e70f9
+		lineageTag: 41466d0d-3be6-4d5b-aae1-9721739cf850
 		sourceLineageTag: seasons_used
 		summarizeBy: sum
 		sourceColumn: seasons_used
@@ -93,7 +93,7 @@ table skater_validation_history
 	column projected_rank
 		dataType: int64
 		formatString: 0
-		lineageTag: 8259214b-2e15-4e13-b1c1-0c9dd6b25fa9
+		lineageTag: 92faacac-03f0-4c7d-8206-b201bf3f7426
 		sourceLineageTag: projected_rank
 		summarizeBy: sum
 		sourceColumn: projected_rank
@@ -103,7 +103,7 @@ table skater_validation_history
 	column actual_next_season_points
 		dataType: int64
 		formatString: 0
-		lineageTag: ca1d1061-c179-4def-be50-bae14ac92e88
+		lineageTag: 280aa987-1927-471e-811a-81c573c2d3d3
 		sourceLineageTag: actual_next_season_points
 		summarizeBy: sum
 		sourceColumn: actual_next_season_points
@@ -115,5 +115,5 @@ table skater_validation_history
 		source
 			entityName: skater_validation_history
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 

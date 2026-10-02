@@ -1,11 +1,11 @@
 table championship_odds_2021
-	lineageTag: 59fe34aa-0099-46a8-bcc0-b28291ace24c
+	lineageTag: 07272a2f-8ea5-45fa-9944-016c1c345340
 	sourceLineageTag: [gold].[championship_odds_2021]
 
 	column team_id
 		dataType: int64
 		formatString: 0
-		lineageTag: 0f137f65-2933-4a2f-a9a3-7dbaf102b206
+		lineageTag: 9222778e-1d46-492f-bbe0-d653bb6e5a31
 		sourceLineageTag: team_id
 		summarizeBy: sum
 		sourceColumn: team_id
@@ -14,7 +14,7 @@ table championship_odds_2021
 
 	column teamName
 		dataType: string
-		lineageTag: d262baaa-6ac0-4f0c-b162-69e891a42dd1
+		lineageTag: 1fe9e0fa-891a-4e5f-b39c-5bba02ecc56e
 		sourceLineageTag: teamName
 		summarizeBy: none
 		sourceColumn: teamName
@@ -23,7 +23,7 @@ table championship_odds_2021
 
 	column abbreviation
 		dataType: string
-		lineageTag: add5716c-b89d-4c0f-a0d9-7f1ca237abd8
+		lineageTag: 13e659b6-101f-4830-865c-2b40f6d60204
 		sourceLineageTag: abbreviation
 		summarizeBy: none
 		sourceColumn: abbreviation
@@ -32,7 +32,7 @@ table championship_odds_2021
 
 	column proj_points_pct
 		dataType: double
-		lineageTag: c2e38ef8-94ae-457a-b8d5-78691a11f043
+		lineageTag: 011c1a29-910a-4fb9-89b3-5f11f9cd8b53
 		sourceLineageTag: proj_points_pct
 		summarizeBy: sum
 		sourceColumn: proj_points_pct
@@ -44,7 +44,7 @@ table championship_odds_2021
 	column projected_rank
 		dataType: int64
 		formatString: 0
-		lineageTag: aa968acd-7beb-4c58-ab4e-f290684c2eeb
+		lineageTag: 0d8b6c9d-9cf5-47dc-b236-efd2815acc7f
 		sourceLineageTag: projected_rank
 		summarizeBy: sum
 		sourceColumn: projected_rank
@@ -53,7 +53,7 @@ table championship_odds_2021
 
 	column championship_probability
 		dataType: double
-		lineageTag: ea3e5e25-e2ad-41c7-87b5-fb112560592b
+		lineageTag: 4368c68a-5600-4672-beb9-aa06acda3f32
 		sourceLineageTag: championship_probability
 		summarizeBy: sum
 		sourceColumn: championship_probability
@@ -67,5 +67,5 @@ table championship_odds_2021
 		source
 			entityName: championship_odds_2021
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 

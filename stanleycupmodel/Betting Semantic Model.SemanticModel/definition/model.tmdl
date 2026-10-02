@@ -8,11 +8,10 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["DirectLake - NHL_db"]
+annotation PBI_QueryOrder = ["DirectLake - NHL_data"]
 
 annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit"]
 
-ref table dim_team
 ref table actual_2020_21_results
 ref table best_player_forecast_2021
 ref table champion_validation_history
@@ -21,4 +20,5 @@ ref table gold_goalie_season
 ref table gold_skater_season
 ref table skater_validation_history
 ref table gold_team_season
+ref table dim_team
 

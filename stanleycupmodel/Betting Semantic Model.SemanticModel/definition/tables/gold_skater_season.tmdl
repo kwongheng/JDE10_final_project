@@ -1,11 +1,11 @@
 table gold_skater_season
-	lineageTag: 2b456761-d62d-4205-829d-d5429cf8e638
+	lineageTag: 56867dea-6a6b-4459-85d9-f7f5e054d76c
 	sourceLineageTag: [gold].[skater_season]
 
 	column player_id
 		dataType: int64
 		formatString: 0
-		lineageTag: 4b21c750-a750-4928-88c5-447323da6c42
+		lineageTag: 769df89a-614f-4760-a8ae-a51f6ef7c743
 		sourceLineageTag: player_id
 		summarizeBy: sum
 		sourceColumn: player_id
@@ -15,7 +15,7 @@ table gold_skater_season
 	column season
 		dataType: int64
 		formatString: 0
-		lineageTag: ee3beb54-83e7-4965-989c-1a1786dbd456
+		lineageTag: b66a95d3-1ecb-4da4-9464-cbbfccd0c2f8
 		sourceLineageTag: season
 		summarizeBy: sum
 		sourceColumn: season
@@ -25,7 +25,7 @@ table gold_skater_season
 	column season_start_year
 		dataType: int64
 		formatString: 0
-		lineageTag: 02c06239-e767-4309-ac22-ad54302507d9
+		lineageTag: 1df47989-89b2-490f-91ef-838a2323eb86
 		sourceLineageTag: season_start_year
 		summarizeBy: sum
 		sourceColumn: season_start_year
@@ -35,7 +35,7 @@ table gold_skater_season
 	column games_played
 		dataType: int64
 		formatString: 0
-		lineageTag: 5a310e6b-6bfe-4e51-91e2-f7d6f60926f3
+		lineageTag: 66e7b724-0051-49b1-b670-4c7e4b975442
 		sourceLineageTag: games_played
 		summarizeBy: sum
 		sourceColumn: games_played
@@ -45,7 +45,7 @@ table gold_skater_season
 	column goals
 		dataType: int64
 		formatString: 0
-		lineageTag: 46ffce73-ff22-4d98-b694-ef36fcabb3c0
+		lineageTag: f3f82d02-fe55-4235-9dc4-73aeb0d5d262
 		sourceLineageTag: goals
 		summarizeBy: sum
 		sourceColumn: goals
@@ -55,7 +55,7 @@ table gold_skater_season
 	column assists
 		dataType: int64
 		formatString: 0
-		lineageTag: e02e81db-f588-4516-9af0-480e3dd6a622
+		lineageTag: c1d0f89b-61b1-4288-ad3c-ef7f77f53603
 		sourceLineageTag: assists
 		summarizeBy: sum
 		sourceColumn: assists
@@ -65,7 +65,7 @@ table gold_skater_season
 	column points
 		dataType: int64
 		formatString: 0
-		lineageTag: 62cd9e8a-900e-438e-8f3e-8f9794429e57
+		lineageTag: de9ef80a-31fb-4670-8b5c-190a518bdeab
 		sourceLineageTag: points
 		summarizeBy: sum
 		sourceColumn: points
@@ -75,7 +75,7 @@ table gold_skater_season
 	column shots
 		dataType: int64
 		formatString: 0
-		lineageTag: 6a5427df-f4fd-4ed1-8a3e-41e63967f7af
+		lineageTag: 726ced17-6767-493d-8047-5f91a958c054
 		sourceLineageTag: shots
 		summarizeBy: sum
 		sourceColumn: shots
@@ -84,7 +84,7 @@ table gold_skater_season
 
 	column hits
 		dataType: double
-		lineageTag: cbef6144-90e7-4404-85ec-464300555ed3
+		lineageTag: 09e73d29-630a-4020-82bc-9bc5668aa376
 		sourceLineageTag: hits
 		summarizeBy: sum
 		sourceColumn: hits
@@ -96,7 +96,7 @@ table gold_skater_season
 	column pim
 		dataType: int64
 		formatString: 0
-		lineageTag: 37f275b5-15d0-4245-9ab7-7a81bac89e34
+		lineageTag: a93e798e-b68c-4ddf-8193-001a71b44a5a
 		sourceLineageTag: pim
 		summarizeBy: sum
 		sourceColumn: pim
@@ -106,7 +106,7 @@ table gold_skater_season
 	column plus_minus
 		dataType: int64
 		formatString: 0
-		lineageTag: f5682a17-e9c9-4090-b0ca-90e820dc130c
+		lineageTag: f3ae8405-0277-47e0-bf56-e1d7ce2ac95b
 		sourceLineageTag: plus_minus
 		summarizeBy: sum
 		sourceColumn: plus_minus
@@ -116,7 +116,7 @@ table gold_skater_season
 	column pp_goals
 		dataType: int64
 		formatString: 0
-		lineageTag: 9b241081-0803-431f-b92b-14fcba77e4fc
+		lineageTag: 99c68d4c-cf61-400c-8f8f-dee897b3b066
 		sourceLineageTag: pp_goals
 		summarizeBy: sum
 		sourceColumn: pp_goals
@@ -126,7 +126,7 @@ table gold_skater_season
 	column pp_assists
 		dataType: int64
 		formatString: 0
-		lineageTag: 3c51d549-4848-44b7-a5c9-36e1d7e94507
+		lineageTag: e275e204-9776-4c3a-a04d-79e2485fec42
 		sourceLineageTag: pp_assists
 		summarizeBy: sum
 		sourceColumn: pp_assists
@@ -136,7 +136,7 @@ table gold_skater_season
 	column total_toi_seconds
 		dataType: int64
 		formatString: 0
-		lineageTag: 310b26f8-87f5-49ce-a342-212f88968c79
+		lineageTag: 513afc3c-db2b-4a94-b10d-51309deec922
 		sourceLineageTag: total_toi_seconds
 		summarizeBy: sum
 		sourceColumn: total_toi_seconds
@@ -146,35 +146,35 @@ table gold_skater_season
 	column primary_team_id
 		dataType: int64
 		formatString: 0
-		lineageTag: 9009f86e-681f-41d6-a501-b9fed43cd713
+		lineageTag: 3339da96-a082-4179-b8d1-0636df25dded
 		sourceLineageTag: primary_team_id
 		summarizeBy: sum
 		sourceColumn: primary_team_id
 
 		annotation SummarizationSetBy = Automatic
 
-	column firstname
+	column firstName
 		dataType: string
-		lineageTag: 4b2290f6-a848-49c5-98b8-c3b08dca7e28
-		sourceLineageTag: firstname
+		lineageTag: 3c05127b-ace4-4275-a2d7-b5956686dc12
+		sourceLineageTag: firstName
 		summarizeBy: none
-		sourceColumn: firstname
+		sourceColumn: firstName
 
 		annotation SummarizationSetBy = Automatic
 
-	column lastname
+	column lastName
 		dataType: string
-		lineageTag: 00ebc15d-3d86-44be-a3e5-544ac754e11b
-		sourceLineageTag: lastname
+		lineageTag: 11e442db-1aa8-40ae-908a-4c051d47a478
+		sourceLineageTag: lastName
 		summarizeBy: none
-		sourceColumn: lastname
+		sourceColumn: lastName
 
 		annotation SummarizationSetBy = Automatic
 
 	column birthdate
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: 7106bd1c-fe2f-4d7a-98b7-64b8667aed63
+		lineageTag: 9ef390a2-465c-4503-9f59-0c29a8a149d6
 		sourceLineageTag: birthdate
 		summarizeBy: none
 		sourceColumn: birthdate
@@ -183,7 +183,7 @@ table gold_skater_season
 
 	column primaryPosition
 		dataType: string
-		lineageTag: 3329861e-4698-4f47-9226-ac6a6052065f
+		lineageTag: 9627ce20-bbea-490a-8845-7e985ee42546
 		sourceLineageTag: primaryPosition
 		summarizeBy: none
 		sourceColumn: primaryPosition
@@ -192,17 +192,36 @@ table gold_skater_season
 
 	column nationality
 		dataType: string
-		lineageTag: fcf1aeca-ff9a-4cfe-aaf5-4e522359b11c
+		lineageTag: 1e95d512-efb6-4703-b60e-6c69ce2d652a
 		sourceLineageTag: nationality
 		summarizeBy: none
 		sourceColumn: nationality
 
 		annotation SummarizationSetBy = Automatic
 
+	column _bronze_ingested_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 150b9440-3f63-4f29-bbd6-ad996918a8db
+		sourceLineageTag: _bronze_ingested_at
+		summarizeBy: none
+		sourceColumn: _bronze_ingested_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 1fe8dc18-6196-46b6-ae18-aece9f10b025
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
 	column approx_age
 		dataType: int64
 		formatString: 0
-		lineageTag: 87f730df-ef2a-4073-9a6c-94a9dfe08e06
+		lineageTag: 47d9afbc-feb4-4d37-9b1d-dd7e360da68e
 		sourceLineageTag: approx_age
 		summarizeBy: sum
 		sourceColumn: approx_age
@@ -211,7 +230,7 @@ table gold_skater_season
 
 	column points_per_game
 		dataType: double
-		lineageTag: 3bb9a8ea-b9ef-4dd3-950f-aa2aee605a5e
+		lineageTag: a1a773ba-6b49-4cee-b86e-a8cb00306c11
 		sourceLineageTag: points_per_game
 		summarizeBy: sum
 		sourceColumn: points_per_game
@@ -222,7 +241,7 @@ table gold_skater_season
 
 	column avg_toi_minutes_per_game
 		dataType: double
-		lineageTag: c094c029-02e6-4478-9681-aaae60d3da3f
+		lineageTag: afc63bb5-4d04-4289-9a39-9defd1ea5e20
 		sourceLineageTag: avg_toi_minutes_per_game
 		summarizeBy: sum
 		sourceColumn: avg_toi_minutes_per_game
@@ -233,7 +252,7 @@ table gold_skater_season
 
 	column points_per_60
 		dataType: double
-		lineageTag: 82c87551-3297-4a30-beda-6aa36db73bf9
+		lineageTag: 98b31b3d-88d0-4c18-91eb-917e62a26656
 		sourceLineageTag: points_per_60
 		summarizeBy: sum
 		sourceColumn: points_per_60
@@ -247,7 +266,7 @@ table gold_skater_season
 		source
 			entityName: skater_season
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 
 	changedProperty = Name
 

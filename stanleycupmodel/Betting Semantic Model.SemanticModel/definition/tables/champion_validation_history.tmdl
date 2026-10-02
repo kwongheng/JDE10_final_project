@@ -1,11 +1,11 @@
 table champion_validation_history
-	lineageTag: 9636a5d7-d3f6-48e8-98e4-131f432676bd
+	lineageTag: 608d678f-39b9-42a6-bc41-fcc19b2b7549
 	sourceLineageTag: [gold].[champion_validation_history]
 
 	column as_of_season_start_year
 		dataType: int64
 		formatString: 0
-		lineageTag: ed788977-ce7a-41fe-84e0-3221ee61df6c
+		lineageTag: 4f8063f2-c6d6-43f6-961d-62e1c1c9da02
 		sourceLineageTag: as_of_season_start_year
 		summarizeBy: sum
 		sourceColumn: as_of_season_start_year
@@ -15,7 +15,7 @@ table champion_validation_history
 	column team_id
 		dataType: int64
 		formatString: 0
-		lineageTag: b95a27b5-edcb-4709-893d-edf59da36951
+		lineageTag: b9ebb1f3-eada-418d-a9ac-ee633cf0980a
 		sourceLineageTag: team_id
 		summarizeBy: sum
 		sourceColumn: team_id
@@ -24,7 +24,7 @@ table champion_validation_history
 
 	column teamName
 		dataType: string
-		lineageTag: d02bf299-8b8f-4cf8-bf06-633fd053f9e7
+		lineageTag: 720ef73b-9daa-43ab-8491-6b50716fc0bf
 		sourceLineageTag: teamName
 		summarizeBy: none
 		sourceColumn: teamName
@@ -33,7 +33,7 @@ table champion_validation_history
 
 	column abbreviation
 		dataType: string
-		lineageTag: 683744b0-b802-417a-a055-21ca844cd32b
+		lineageTag: 3ba3461f-9ae8-4083-9652-252454ffedd9
 		sourceLineageTag: abbreviation
 		summarizeBy: none
 		sourceColumn: abbreviation
@@ -42,7 +42,7 @@ table champion_validation_history
 
 	column proj_points_pct
 		dataType: double
-		lineageTag: b441e34d-925b-44a7-9213-61b15d9394fe
+		lineageTag: aabaa4a3-d61f-40a3-b535-f76cb7a5bbc1
 		sourceLineageTag: proj_points_pct
 		summarizeBy: sum
 		sourceColumn: proj_points_pct
@@ -53,7 +53,7 @@ table champion_validation_history
 
 	column proj_goal_diff
 		dataType: double
-		lineageTag: a1470f7d-8a75-4da5-9f82-df01297a7632
+		lineageTag: c999d31d-9f80-4b1d-a007-2a0b6cef52ef
 		sourceLineageTag: proj_goal_diff
 		summarizeBy: sum
 		sourceColumn: proj_goal_diff
@@ -65,7 +65,7 @@ table champion_validation_history
 	column seasons_used
 		dataType: int64
 		formatString: 0
-		lineageTag: e6cb0b97-0d60-4cc5-add8-5b4193ed5373
+		lineageTag: 41eea121-0c31-4423-ac9f-b01a2637dcb6
 		sourceLineageTag: seasons_used
 		summarizeBy: sum
 		sourceColumn: seasons_used
@@ -75,7 +75,7 @@ table champion_validation_history
 	column projected_rank
 		dataType: int64
 		formatString: 0
-		lineageTag: 4179c962-5d5e-45f4-a90f-46eb56979299
+		lineageTag: 062fc64c-4fd2-49b4-a7d2-eb5a8776b7c7
 		sourceLineageTag: projected_rank
 		summarizeBy: sum
 		sourceColumn: projected_rank
@@ -85,7 +85,7 @@ table champion_validation_history
 	column champion_team_id
 		dataType: int64
 		formatString: 0
-		lineageTag: c008f3fc-e0f2-43fb-ba78-664663853190
+		lineageTag: 07e92314-8769-4ab2-97ef-688a17beb8c7
 		sourceLineageTag: champion_team_id
 		summarizeBy: sum
 		sourceColumn: champion_team_id
@@ -95,7 +95,7 @@ table champion_validation_history
 	column actually_won_next_season
 		dataType: int64
 		formatString: 0
-		lineageTag: dda022e2-326a-405c-840b-36a3cb5c5638
+		lineageTag: 1ccd1afd-55c4-4857-8f56-0d0be00f3164
 		sourceLineageTag: actually_won_next_season
 		summarizeBy: sum
 		sourceColumn: actually_won_next_season
@@ -107,5 +107,5 @@ table champion_validation_history
 		source
 			entityName: champion_validation_history
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 

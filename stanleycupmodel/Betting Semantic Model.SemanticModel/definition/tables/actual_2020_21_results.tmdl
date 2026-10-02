@@ -1,10 +1,10 @@
 table actual_2020_21_results
-	lineageTag: 9582a807-9a54-40fb-8cb9-8fa52c747f8d
+	lineageTag: c3cf8e01-6320-4f7e-949c-783aa5a825fa
 	sourceLineageTag: [gold].[actual_2020_21_results]
 
 	column category
 		dataType: string
-		lineageTag: 3e70da9c-08ff-41cb-a071-6dc35a10e204
+		lineageTag: e6765033-bf8e-4cad-820b-4fef0ead3d65
 		sourceLineageTag: category
 		summarizeBy: none
 		sourceColumn: category
@@ -13,7 +13,7 @@ table actual_2020_21_results
 
 	column winner_name
 		dataType: string
-		lineageTag: 0f772ec8-9b75-48a5-933b-87e81625fa61
+		lineageTag: 2bed420f-2bfc-4a4c-8644-d1f2ab8b5cf0
 		sourceLineageTag: winner_name
 		summarizeBy: none
 		sourceColumn: winner_name
@@ -22,7 +22,7 @@ table actual_2020_21_results
 
 	column team
 		dataType: string
-		lineageTag: 175e4b46-6c1f-43c0-8ea0-2d4496b5462d
+		lineageTag: e9c6c351-26d4-4c1c-9f2c-6f0027f80270
 		sourceLineageTag: team
 		summarizeBy: none
 		sourceColumn: team
@@ -31,7 +31,7 @@ table actual_2020_21_results
 
 	column detail
 		dataType: string
-		lineageTag: f53bf7d8-a22e-4531-b2f6-fe2e7fb5cb89
+		lineageTag: 5c466c3f-ddde-4427-9c19-e772b555c705
 		sourceLineageTag: detail
 		summarizeBy: none
 		sourceColumn: detail
@@ -43,5 +43,5 @@ table actual_2020_21_results
 		source
 			entityName: actual_2020_21_results
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 

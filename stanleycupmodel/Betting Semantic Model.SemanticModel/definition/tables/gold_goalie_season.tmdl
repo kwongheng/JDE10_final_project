@@ -1,11 +1,11 @@
 table gold_goalie_season
-	lineageTag: 56f052f8-e51a-4bea-9ff9-b79b6faeacf0
+	lineageTag: 200f5581-0a7c-4a5f-94c3-7ebc3dbee6b9
 	sourceLineageTag: [gold].[goalie_season]
 
 	column player_id
 		dataType: int64
 		formatString: 0
-		lineageTag: 2c0a4002-e659-45c7-be58-420103191096
+		lineageTag: 423b2bcc-4e5e-4275-8651-8d489f7b7117
 		sourceLineageTag: player_id
 		summarizeBy: sum
 		sourceColumn: player_id
@@ -15,7 +15,7 @@ table gold_goalie_season
 	column season
 		dataType: int64
 		formatString: 0
-		lineageTag: 2bb666ed-9e69-46e9-8a14-21c682335280
+		lineageTag: 2d7f19f9-4cb4-4936-b23e-7fcdaf17deb9
 		sourceLineageTag: season
 		summarizeBy: sum
 		sourceColumn: season
@@ -25,7 +25,7 @@ table gold_goalie_season
 	column season_start_year
 		dataType: int64
 		formatString: 0
-		lineageTag: 267a3b03-d36c-46b5-906b-04f17008d7bf
+		lineageTag: 2373aaf5-7b68-4696-9f5e-ffce96578f2a
 		sourceLineageTag: season_start_year
 		summarizeBy: sum
 		sourceColumn: season_start_year
@@ -35,7 +35,7 @@ table gold_goalie_season
 	column games_played
 		dataType: int64
 		formatString: 0
-		lineageTag: fd74d75c-b583-4d56-92aa-c1aeecd115d0
+		lineageTag: 752c8225-2443-41ce-b2d1-d6e8fc98d8d6
 		sourceLineageTag: games_played
 		summarizeBy: sum
 		sourceColumn: games_played
@@ -45,7 +45,7 @@ table gold_goalie_season
 	column wins
 		dataType: int64
 		formatString: 0
-		lineageTag: 1402df82-89e4-416c-b43b-e29ecf5a5800
+		lineageTag: e983aab5-2b56-46e0-be3a-0593942bb592
 		sourceLineageTag: wins
 		summarizeBy: sum
 		sourceColumn: wins
@@ -55,7 +55,7 @@ table gold_goalie_season
 	column losses
 		dataType: int64
 		formatString: 0
-		lineageTag: 12bee87a-a2ab-4de3-9fe1-6629f0c483c6
+		lineageTag: 73cbb274-92ea-4327-8fcb-6f7070c0b061
 		sourceLineageTag: losses
 		summarizeBy: sum
 		sourceColumn: losses
@@ -65,7 +65,7 @@ table gold_goalie_season
 	column shots_against
 		dataType: int64
 		formatString: 0
-		lineageTag: f61a34e1-cf7c-48b5-80b1-ab7a0ae15751
+		lineageTag: 116e312e-7fab-4154-ae05-2444d438d261
 		sourceLineageTag: shots_against
 		summarizeBy: sum
 		sourceColumn: shots_against
@@ -75,7 +75,7 @@ table gold_goalie_season
 	column saves
 		dataType: int64
 		formatString: 0
-		lineageTag: 06753059-ceba-4231-b0db-edbf2634f9aa
+		lineageTag: d796b67c-553a-4e3c-96d4-5ca85ea6641c
 		sourceLineageTag: saves
 		summarizeBy: sum
 		sourceColumn: saves
@@ -85,7 +85,7 @@ table gold_goalie_season
 	column goals_against
 		dataType: int64
 		formatString: 0
-		lineageTag: bca1e20b-dc25-4ddf-b127-e9b5bfb2af69
+		lineageTag: eeea9550-ae3c-416b-be9d-842b1d5b4ab3
 		sourceLineageTag: goals_against
 		summarizeBy: sum
 		sourceColumn: goals_against
@@ -95,7 +95,7 @@ table gold_goalie_season
 	column total_toi_seconds
 		dataType: int64
 		formatString: 0
-		lineageTag: c631abb0-4ddb-492a-9d07-85fbff18ab4c
+		lineageTag: ff7779b4-3c8b-4b23-8234-b70497dd29a8
 		sourceLineageTag: total_toi_seconds
 		summarizeBy: sum
 		sourceColumn: total_toi_seconds
@@ -105,35 +105,35 @@ table gold_goalie_season
 	column primary_team_id
 		dataType: int64
 		formatString: 0
-		lineageTag: db3842c0-47d6-4a36-83c7-3b51605d9fd9
+		lineageTag: cbcb3077-f741-4510-a60a-04cd45a08452
 		sourceLineageTag: primary_team_id
 		summarizeBy: sum
 		sourceColumn: primary_team_id
 
 		annotation SummarizationSetBy = Automatic
 
-	column firstname
+	column firstName
 		dataType: string
-		lineageTag: 291eeeec-e2b5-4437-9bdc-35decb7c464c
-		sourceLineageTag: firstname
+		lineageTag: 9ca8ed65-7485-4506-9aee-a579e1e1f491
+		sourceLineageTag: firstName
 		summarizeBy: none
-		sourceColumn: firstname
+		sourceColumn: firstName
 
 		annotation SummarizationSetBy = Automatic
 
-	column lastname
+	column lastName
 		dataType: string
-		lineageTag: ac48b8ea-e1d0-42e3-8a31-edb32257775b
-		sourceLineageTag: lastname
+		lineageTag: a182ee67-105f-46c5-b680-ef6b616738e2
+		sourceLineageTag: lastName
 		summarizeBy: none
-		sourceColumn: lastname
+		sourceColumn: lastName
 
 		annotation SummarizationSetBy = Automatic
 
 	column birthdate
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: 07dce04b-1e42-4554-b5a5-1bf47be6a689
+		lineageTag: 7c71b86a-d21d-4907-a73e-b08c18a95e58
 		sourceLineageTag: birthdate
 		summarizeBy: none
 		sourceColumn: birthdate
@@ -142,7 +142,7 @@ table gold_goalie_season
 
 	column primaryPosition
 		dataType: string
-		lineageTag: 58a13f00-8155-45cb-856b-4866e19c8bf2
+		lineageTag: e7ef5fdd-f3c1-4c55-b57a-2ba0f40a9254
 		sourceLineageTag: primaryPosition
 		summarizeBy: none
 		sourceColumn: primaryPosition
@@ -151,17 +151,36 @@ table gold_goalie_season
 
 	column nationality
 		dataType: string
-		lineageTag: 356a275c-5e7c-43e7-bc0f-66e2a41434c4
+		lineageTag: eb8426e4-f67d-4f17-a799-5bf4be12672b
 		sourceLineageTag: nationality
 		summarizeBy: none
 		sourceColumn: nationality
 
 		annotation SummarizationSetBy = Automatic
 
+	column _bronze_ingested_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c01a995c-9518-4712-a4a7-8cb4bec0066a
+		sourceLineageTag: _bronze_ingested_at
+		summarizeBy: none
+		sourceColumn: _bronze_ingested_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 27116562-365e-41e7-9384-c2873e090c4a
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
 	column approx_age
 		dataType: int64
 		formatString: 0
-		lineageTag: dad1af0d-b82f-4289-a7ad-db4a74ecf0f2
+		lineageTag: 3a0425bb-aed0-40e6-91e5-f493ba7b94c7
 		sourceLineageTag: approx_age
 		summarizeBy: sum
 		sourceColumn: approx_age
@@ -170,7 +189,7 @@ table gold_goalie_season
 
 	column save_pct
 		dataType: double
-		lineageTag: 84355b2e-b92a-4d42-a3a8-466d9276e93f
+		lineageTag: bae20a75-264b-4ecb-bfbf-1ca040210e03
 		sourceLineageTag: save_pct
 		summarizeBy: sum
 		sourceColumn: save_pct
@@ -181,7 +200,7 @@ table gold_goalie_season
 
 	column goals_against_avg_per60
 		dataType: double
-		lineageTag: 2fcff166-6cb0-48f4-9dbc-2818171cc53e
+		lineageTag: 4cf3bc30-80d3-44ab-bc91-fb6aa289a091
 		sourceLineageTag: goals_against_avg_per60
 		summarizeBy: sum
 		sourceColumn: goals_against_avg_per60
@@ -192,7 +211,7 @@ table gold_goalie_season
 
 	column total_toi_hours
 		dataType: double
-		lineageTag: 72f8afae-dfbd-467a-a3b4-3fbeda4ff162
+		lineageTag: f2c71b0a-3ec9-46f9-b42c-5085e72eefbe
 		sourceLineageTag: total_toi_hours
 		summarizeBy: sum
 		sourceColumn: total_toi_hours
@@ -206,7 +225,7 @@ table gold_goalie_season
 		source
 			entityName: goalie_season
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 
 	changedProperty = Name
 

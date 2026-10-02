@@ -1,11 +1,11 @@
 table best_player_forecast_2021
-	lineageTag: 17c9c956-13c6-4d93-b5d2-e174e25e21e0
+	lineageTag: cf728cbe-3db6-4e48-8db2-cdb97ff3efab
 	sourceLineageTag: [gold].[best_player_forecast_2021]
 
 	column as_of_season_start_year
 		dataType: int64
 		formatString: 0
-		lineageTag: 993ea702-7d47-4eaa-b5bf-395b3be493b1
+		lineageTag: fade9fca-da18-4c36-8160-487ea87cfe61
 		sourceLineageTag: as_of_season_start_year
 		summarizeBy: sum
 		sourceColumn: as_of_season_start_year
@@ -15,7 +15,7 @@ table best_player_forecast_2021
 	column player_id
 		dataType: int64
 		formatString: 0
-		lineageTag: b8152920-04fb-49bb-80c2-3015d5977f7d
+		lineageTag: 612b2f57-1781-4b5d-8b89-6d678ba2f2f4
 		sourceLineageTag: player_id
 		summarizeBy: sum
 		sourceColumn: player_id
@@ -24,7 +24,7 @@ table best_player_forecast_2021
 
 	column firstName
 		dataType: string
-		lineageTag: 6575dd18-2f41-492e-aa06-eca1cceedb7c
+		lineageTag: 1c20b27b-99a0-4d53-8f12-517ad4ce96b7
 		sourceLineageTag: firstName
 		summarizeBy: none
 		sourceColumn: firstName
@@ -33,7 +33,7 @@ table best_player_forecast_2021
 
 	column lastName
 		dataType: string
-		lineageTag: 48a433c6-58d8-448f-87fa-1b18467893d9
+		lineageTag: 3b96b88d-34bc-4190-8bd9-12ac63df06ad
 		sourceLineageTag: lastName
 		summarizeBy: none
 		sourceColumn: lastName
@@ -42,7 +42,7 @@ table best_player_forecast_2021
 
 	column primaryPosition
 		dataType: string
-		lineageTag: f8d9a4e4-abca-415f-8bdd-b8982082403b
+		lineageTag: 7f01e642-8b1d-4ad6-86f9-ce092bdcdc25
 		sourceLineageTag: primaryPosition
 		summarizeBy: none
 		sourceColumn: primaryPosition
@@ -51,7 +51,7 @@ table best_player_forecast_2021
 
 	column teamName
 		dataType: string
-		lineageTag: 832d5fcd-dac6-4a03-a4c7-7b2431f938ed
+		lineageTag: 33efaf89-974a-4b92-9b62-67fd32ec16f4
 		sourceLineageTag: teamName
 		summarizeBy: none
 		sourceColumn: teamName
@@ -60,7 +60,7 @@ table best_player_forecast_2021
 
 	column proj_points_per_game
 		dataType: double
-		lineageTag: 8cbf66d4-6a47-4730-9200-3cb3e393bc08
+		lineageTag: 2261ce4d-16be-43c0-a0ce-c9a78c622d4d
 		sourceLineageTag: proj_points_per_game
 		summarizeBy: sum
 		sourceColumn: proj_points_per_game
@@ -71,7 +71,7 @@ table best_player_forecast_2021
 
 	column proj_points_82gp
 		dataType: double
-		lineageTag: c5df4612-3eac-46f4-bd58-a994dbc2ab12
+		lineageTag: 2f27a380-7532-41a7-be74-264f4e94760e
 		sourceLineageTag: proj_points_82gp
 		summarizeBy: sum
 		sourceColumn: proj_points_82gp
@@ -83,7 +83,7 @@ table best_player_forecast_2021
 	column seasons_used
 		dataType: int64
 		formatString: 0
-		lineageTag: d29fd437-db4f-4f3a-936a-d7dc3196016d
+		lineageTag: b8276c4a-bd6d-4f09-a1ea-79be9df7ef5c
 		sourceLineageTag: seasons_used
 		summarizeBy: sum
 		sourceColumn: seasons_used
@@ -93,7 +93,7 @@ table best_player_forecast_2021
 	column projected_rank
 		dataType: int64
 		formatString: 0
-		lineageTag: 911c990d-227b-4c0a-b188-0e993619add2
+		lineageTag: cbdc6fff-65ad-41dd-9f75-ad06dc656491
 		sourceLineageTag: projected_rank
 		summarizeBy: sum
 		sourceColumn: projected_rank
@@ -103,7 +103,7 @@ table best_player_forecast_2021
 	column actual_next_season_points
 		dataType: int64
 		formatString: 0
-		lineageTag: 305225d7-6c61-422c-b585-a3427a8b337f
+		lineageTag: 57464e73-b9f5-4877-91e2-6e37e3d9160c
 		sourceLineageTag: actual_next_season_points
 		summarizeBy: sum
 		sourceColumn: actual_next_season_points
@@ -115,5 +115,5 @@ table best_player_forecast_2021
 		source
 			entityName: best_player_forecast_2021
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 

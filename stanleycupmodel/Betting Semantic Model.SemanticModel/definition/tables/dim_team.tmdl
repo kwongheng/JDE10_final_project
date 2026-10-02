@@ -1,11 +1,11 @@
 table dim_team
-	lineageTag: 63749f5a-e6b8-413e-94d5-326ad5aaec1a
+	lineageTag: 7aa2aa2d-fc96-44ab-b5cf-0ab5d6430766
 	sourceLineageTag: [silver].[dim_team]
 
 	column team_id
 		dataType: int64
 		formatString: 0
-		lineageTag: 446d3c43-9966-468d-a90b-4c36d7459d9f
+		lineageTag: 18228355-8759-4878-8b3c-572bbe5c3182
 		sourceLineageTag: team_id
 		summarizeBy: sum
 		sourceColumn: team_id
@@ -15,7 +15,7 @@ table dim_team
 	column franchiseId
 		dataType: int64
 		formatString: 0
-		lineageTag: 7f8e2158-4c51-4c5e-8fff-da54b5319d6e
+		lineageTag: 00af3e26-c972-4998-beec-b70ac3b3b847
 		sourceLineageTag: franchiseId
 		summarizeBy: count
 		sourceColumn: franchiseId
@@ -24,7 +24,7 @@ table dim_team
 
 	column shortName
 		dataType: string
-		lineageTag: 6f379666-213f-4aaa-a8bc-f1330bc31324
+		lineageTag: ffd96a73-1f37-4733-b105-703da49d865e
 		sourceLineageTag: shortName
 		summarizeBy: none
 		sourceColumn: shortName
@@ -33,7 +33,7 @@ table dim_team
 
 	column teamName
 		dataType: string
-		lineageTag: 6e5b3dd4-4c9d-484f-92d9-f4d8f4f15ed5
+		lineageTag: 6e11f4b2-7b08-4d4e-aafc-42cc88658310
 		sourceLineageTag: teamName
 		summarizeBy: none
 		sourceColumn: teamName
@@ -42,7 +42,7 @@ table dim_team
 
 	column abbreviation
 		dataType: string
-		lineageTag: ec6fe77d-f978-425e-a6c4-be0afc1fd201
+		lineageTag: 316833de-cea5-4274-8923-beedb0bbbd0a
 		sourceLineageTag: abbreviation
 		summarizeBy: none
 		sourceColumn: abbreviation
@@ -51,7 +51,7 @@ table dim_team
 
 	column full_name
 		dataType: string
-		lineageTag: f43f42f4-b9fe-475a-b455-c1c28ea67338
+		lineageTag: 7fa907a1-32b6-4fab-9c37-52319d40243e
 		sourceLineageTag: full_name
 		summarizeBy: none
 		sourceColumn: full_name
@@ -63,5 +63,5 @@ table dim_team
 		source
 			entityName: dim_team
 			schemaName: silver
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 
