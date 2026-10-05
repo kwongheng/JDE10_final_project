@@ -1,36 +1,18 @@
 table betting_summary_unpivoted
-	lineageTag: c54ddc1b-6e4f-43e3-b3fb-86236b2c1d9a
+	lineageTag: 29a3a03b-4ff9-4df0-bc31-bdaf3f843a5e
 	sourceLineageTag: [gold].[betting_summary_unpivoted]
 
 	measure 'Team Total Committed Bets' =
-			
 			CALCULATE(
 			    COUNTROWS('betting_summary_unpivoted'),
-			    REMOVEFILTERS('betting_summary_unpivoted'[Category])  // Aggregates ML, Puck Line & Totals together
+			    REMOVEFILTERS('betting_summary_unpivoted'[Category])
 			)
 		formatString: 0
-		lineageTag: 6f1167b8-33d6-4b95-baaf-d8ee56f2b909
-
-		changedProperty = Name
-
-	measure 'Team Executive Label' =
-			
-			VAR TotalBets = [Team Total Committed Bets]
-			VAR WinRate = [Team Win Rate %]
-			VAR NetGain = [Total Net Gain $]
-			RETURN
-			    IF(
-			        TotalBets >= 5,
-			        FORMAT(WinRate, "0.0%") & " (" & TotalBets & " Bets | Net: " & FORMAT(NetGain, "$#,##0") & ")",
-			        BLANK()
-			    )
-		lineageTag: eb3df81a-e547-4e77-87a7-fa2109bfea2b
-
-		changedProperty = Name
+		lineageTag: 67bc37ae-85de-4a0e-8ec7-7eecb01acb7a
 
 	column Category
 		dataType: string
-		lineageTag: 16d87767-1d6d-43cf-853f-c9de7771dbb1
+		lineageTag: ef24a673-33b5-4ef4-92cb-0c3cd327a341
 		sourceLineageTag: Category
 		summarizeBy: none
 		sourceColumn: Category
@@ -39,7 +21,7 @@ table betting_summary_unpivoted
 
 	column Metric_Name
 		dataType: string
-		lineageTag: 8fc7cbd9-3926-49b1-ad26-7390be764301
+		lineageTag: 665c05e3-7a9c-4c80-ae2e-5ea99f1dff91
 		sourceLineageTag: Metric_Name
 		summarizeBy: none
 		sourceColumn: Metric_Name
@@ -49,7 +31,7 @@ table betting_summary_unpivoted
 	column Game_Count
 		dataType: int64
 		formatString: 0
-		lineageTag: 722310d4-5c5e-417e-932e-179670241606
+		lineageTag: deeb937d-aa62-4cd7-b35e-16bc7ebec174
 		sourceLineageTag: Game_Count
 		summarizeBy: sum
 		sourceColumn: Game_Count
@@ -58,7 +40,7 @@ table betting_summary_unpivoted
 
 	column Metric_Group
 		dataType: string
-		lineageTag: fa1f0d72-d691-47b6-8179-cd468995e831
+		lineageTag: 0a4a3abc-150d-4685-b29c-9573e065a603
 		sourceLineageTag: Metric_Group
 		summarizeBy: none
 		sourceColumn: Metric_Group
@@ -70,5 +52,5 @@ table betting_summary_unpivoted
 		source
 			entityName: betting_summary_unpivoted
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 

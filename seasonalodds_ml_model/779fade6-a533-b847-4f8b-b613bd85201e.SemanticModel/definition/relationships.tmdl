@@ -1,14 +1,14 @@
-relationship 90a2a015-f849-8402-b633-93f681402972
+relationship ab21a20b-d059-ff9b-a8f1-87732f054061
 	fromColumn: betting_all_samples.picked_side
 	toColumn: top_3_teams_per_market.Team
 
-relationship 2954f656-25f5-7379-6681-6d578bacaa12
+relationship dbb7d35f-c70f-2737-c90e-291e1887d33a
 	crossFilteringBehavior: bothDirections
 	securityFilteringBehavior: bothDirections
 	fromColumn: betting_summary_unpivoted.Category
 	toColumn: betting_season_tabulation.Category
 
-relationship a1ccf6fa-e8fc-434d-0c34-8d52bc354252
+relationship 07148586-06c3-1869-a6f5-7831960fc250
 	fromColumn: team_info.team_id
 	toColumn: team_composite_2yr.team_id
 

@@ -1,11 +1,11 @@
 table team_composite_2yr
-	lineageTag: 13d00dce-603e-4436-a7f3-52225e5cdf22
+	lineageTag: d99e14af-d298-4517-8502-7169455ba79d
 	sourceLineageTag: [gold].[team_composite_2yr]
 
 	column team_id
 		dataType: int64
 		formatString: 0
-		lineageTag: e0bea58a-cf76-4998-b964-ada5c06953a3
+		lineageTag: a8455215-7733-4e33-bad5-8f3f0d251f54
 		sourceLineageTag: team_id
 		summarizeBy: none
 		sourceColumn: team_id
@@ -14,7 +14,7 @@ table team_composite_2yr
 
 	column gf_per_gm
 		dataType: double
-		lineageTag: fa64333e-aa0f-4016-bf14-7294b778cc74
+		lineageTag: c8980397-2dac-4166-9300-45ad1be7cd97
 		sourceLineageTag: gf_per_gm
 		summarizeBy: none
 		sourceColumn: gf_per_gm
@@ -25,7 +25,7 @@ table team_composite_2yr
 
 	column ga_per_gm
 		dataType: double
-		lineageTag: b88346e6-1a29-4160-a791-5c67e789a5d5
+		lineageTag: 4715e15b-92fc-48a5-aa40-f36b457ec35e
 		sourceLineageTag: ga_per_gm
 		summarizeBy: none
 		sourceColumn: ga_per_gm
@@ -36,7 +36,7 @@ table team_composite_2yr
 
 	column goal_diff_per_gm
 		dataType: double
-		lineageTag: c5bc5a4b-ccc5-441f-9c44-d6e3fbd59b67
+		lineageTag: d5732f70-6197-498c-8f8e-cd32c1fe516b
 		sourceLineageTag: goal_diff_per_gm
 		summarizeBy: none
 		sourceColumn: goal_diff_per_gm
@@ -47,7 +47,7 @@ table team_composite_2yr
 
 	column corsi_for_per_gm
 		dataType: double
-		lineageTag: e41526ae-dcc6-4398-8fe2-a0e358daf0f1
+		lineageTag: c22596f7-9b5a-4b6c-8615-180a777ee754
 		sourceLineageTag: corsi_for_per_gm
 		summarizeBy: none
 		sourceColumn: corsi_for_per_gm
@@ -58,7 +58,7 @@ table team_composite_2yr
 
 	column pp_pct
 		dataType: double
-		lineageTag: 365e901e-d735-450d-a601-fe8fbb4d82e0
+		lineageTag: c0a2c10f-49c9-40ff-80ba-46486f8dbdf5
 		sourceLineageTag: pp_pct
 		summarizeBy: none
 		sourceColumn: pp_pct
@@ -69,7 +69,7 @@ table team_composite_2yr
 
 	column pk_pct
 		dataType: double
-		lineageTag: e3c2d144-2402-4782-9ef3-863c354b5e80
+		lineageTag: eaecd075-a4c5-445f-b049-c4d3be367854
 		sourceLineageTag: pk_pct
 		summarizeBy: none
 		sourceColumn: pk_pct
@@ -80,7 +80,7 @@ table team_composite_2yr
 
 	column save_pct_proxy
 		dataType: double
-		lineageTag: b96cf56a-ebfa-438e-8f7a-b9a0bac99523
+		lineageTag: f2b1dede-0373-4875-a779-41821f935ef7
 		sourceLineageTag: save_pct_proxy
 		summarizeBy: none
 		sourceColumn: save_pct_proxy
@@ -94,5 +94,5 @@ table team_composite_2yr
 		source
 			entityName: team_composite_2yr
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 

@@ -1,11 +1,11 @@
 table team_info
-	lineageTag: 82ad00fc-c286-428f-a7d6-c20de2d71842
+	lineageTag: bda0c4a9-16d8-489e-8a3a-a8acae87f093
 	sourceLineageTag: [silver].[team_info]
 
 	column team_id
 		dataType: int64
 		formatString: 0
-		lineageTag: a55c8d79-848c-4301-ad85-67886f8dcc04
+		lineageTag: e86c0779-1118-468c-887a-78c99c19e1a5
 		sourceLineageTag: team_id
 		summarizeBy: none
 		sourceColumn: team_id
@@ -15,7 +15,7 @@ table team_info
 	column franchiseId
 		dataType: int64
 		formatString: 0
-		lineageTag: 77128185-2a56-481b-8ab3-6b1aff2270c5
+		lineageTag: 5fcfaf00-a7ee-41ec-9786-a48f6fa7d896
 		sourceLineageTag: franchiseId
 		summarizeBy: count
 		sourceColumn: franchiseId
@@ -24,7 +24,7 @@ table team_info
 
 	column shortName
 		dataType: string
-		lineageTag: 0a8452f5-b88e-4b37-b520-d90a457dc26b
+		lineageTag: 24fcf9f2-1c43-4800-b530-badf58d5e3cc
 		sourceLineageTag: shortName
 		summarizeBy: none
 		sourceColumn: shortName
@@ -33,7 +33,7 @@ table team_info
 
 	column teamName
 		dataType: string
-		lineageTag: dbf7e2b4-4c02-461d-a61b-d5096f40aada
+		lineageTag: 82e205b8-4af3-4838-8cae-0303807ffc62
 		sourceLineageTag: teamName
 		summarizeBy: none
 		sourceColumn: teamName
@@ -42,7 +42,7 @@ table team_info
 
 	column abbreviation
 		dataType: string
-		lineageTag: 9a800405-b678-4feb-a483-48e6d0c6a14f
+		lineageTag: dad9f584-89ed-4177-b18b-56a19383c70f
 		sourceLineageTag: abbreviation
 		summarizeBy: none
 		sourceColumn: abbreviation
@@ -52,7 +52,7 @@ table team_info
 	column _bronze_ingested_at
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: b27d9607-71c4-4c5c-8416-a00df2388366
+		lineageTag: 9c33b7d1-711c-4678-b35b-fc69c82423be
 		sourceLineageTag: _bronze_ingested_at
 		summarizeBy: none
 		sourceColumn: _bronze_ingested_at
@@ -61,7 +61,7 @@ table team_info
 
 	column _row_hash
 		dataType: string
-		lineageTag: bb79a92b-dbaf-4bca-bfa6-29c7fd57aa13
+		lineageTag: ce169fef-b754-481e-841d-f143150324c0
 		sourceLineageTag: _row_hash
 		summarizeBy: none
 		sourceColumn: _row_hash
@@ -73,5 +73,5 @@ table team_info
 		source
 			entityName: team_info
 			schemaName: silver
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 

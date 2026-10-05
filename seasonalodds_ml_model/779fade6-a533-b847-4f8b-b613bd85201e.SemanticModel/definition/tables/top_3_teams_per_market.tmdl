@@ -1,25 +1,20 @@
 table top_3_teams_per_market
-	lineageTag: 3955b59c-466a-4643-aad4-e565c5822bd1
+	lineageTag: 78ecc8e2-72f1-478d-bd2f-104dc6ad23de
 	sourceLineageTag: [gold].[top_3_teams_per_market]
 
 	measure 'Team Win Rate %' =
-			
 			VAR RawWinRate = AVERAGE('top_3_teams_per_market'[Win_Rate_Pct])
 			RETURN
 			    IF(
 			        RawWinRate > 1,
-			        RawWinRate / 100,  // Converts 83.3 into 0.833 for proper % formatting
+			        RawWinRate / 100,
 			        RawWinRate
 			    )
-		lineageTag: 8bf82a5d-3590-446a-aaae-b111bf95cc66
-
-		changedProperty = Name
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		lineageTag: e3f45fdb-5d10-47d9-82dd-f92c554d2bb7
 
 	column Category
 		dataType: string
-		lineageTag: b60cb7b1-338c-45d8-9339-ec1859e2067d
+		lineageTag: 7e95b6c1-b854-44f6-b994-e31bda62b448
 		sourceLineageTag: Category
 		summarizeBy: none
 		sourceColumn: Category
@@ -29,7 +24,7 @@ table top_3_teams_per_market
 	column Rank
 		dataType: int64
 		formatString: 0
-		lineageTag: aa554220-9dba-49c6-8c35-26fc86977fef
+		lineageTag: 581464cc-5ced-4f8b-9281-91a097a741a5
 		sourceLineageTag: Rank
 		summarizeBy: none
 		sourceColumn: Rank
@@ -38,7 +33,7 @@ table top_3_teams_per_market
 
 	column Team
 		dataType: string
-		lineageTag: 9a9b55e5-2917-4cd8-8b62-55c07bd16880
+		lineageTag: 6d15aeee-a905-401c-9b3f-888f1baefc50
 		sourceLineageTag: Team
 		summarizeBy: none
 		sourceColumn: Team
@@ -48,7 +43,7 @@ table top_3_teams_per_market
 	column Qualified_Bets
 		dataType: int64
 		formatString: 0
-		lineageTag: e1b304f2-d014-4a49-971e-078ce3394648
+		lineageTag: 8d3fef0d-4952-44a1-8dd6-97fe484fa75c
 		sourceLineageTag: Qualified_Bets
 		summarizeBy: none
 		sourceColumn: Qualified_Bets
@@ -58,7 +53,7 @@ table top_3_teams_per_market
 	column Winning_Bets
 		dataType: int64
 		formatString: 0
-		lineageTag: ffd1527d-1a7c-474b-bbaf-304942130c63
+		lineageTag: b5cabec6-9e77-4b86-9488-1eca69658ddf
 		sourceLineageTag: Winning_Bets
 		summarizeBy: none
 		sourceColumn: Winning_Bets
@@ -67,33 +62,23 @@ table top_3_teams_per_market
 
 	column Win_Rate_Pct
 		dataType: string
-		lineageTag: acea39e0-0940-4dbc-aabc-30b149c3ac93
+		lineageTag: f163cabb-dc09-4d8c-bca1-2a5fcf8f6f1a
 		sourceLineageTag: Win_Rate_Pct
 		summarizeBy: none
 		sourceColumn: Win_Rate_Pct
 
-		changedProperty = FormatString
-
 		annotation SummarizationSetBy = Automatic
 
-	column Win_Rate_Num =
-			
-			VALUE(SUBSTITUTE('top_3_teams_per_market'[Win_Rate_Pct], "%", ""))
+	column Win_Rate_Num = VALUE(SUBSTITUTE('top_3_teams_per_market'[Win_Rate_Pct], "%", ""))
 		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: a94e185f-9124-40c1-833e-428342ce5f6c
+		lineageTag: a6420ac6-cd78-4e8d-89f3-25d024830178
 		summarizeBy: none
 		expressionContext: userContext
-
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation SummarizationSetBy = Automatic
 
 	partition top_3_teams_per_market = entity
 		mode: directLake
 		source
 			entityName: top_3_teams_per_market
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 

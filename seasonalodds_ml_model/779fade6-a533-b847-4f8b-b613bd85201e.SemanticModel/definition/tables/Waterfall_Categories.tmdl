@@ -1,7 +1,7 @@
 table Waterfall_Categories
-	lineageTag: 98975dee-8e9d-472f-9bef-cccde6dd42c1
+	lineageTag: 341a2153-358a-4457-9595-81ccc8e8498c
 
-	measure 'Waterfall Value' =
+	measure 'Waterfall Value' = ```
 			
 			SWITCH(
 			    SELECTEDVALUE(Waterfall_Categories[Step]),
@@ -9,12 +9,14 @@ table Waterfall_Categories
 			    "Gross Payouts Returned", [Total Capital Spent] + [Total Net Gain],
 			    "Net Profit", [Total Net Gain]
 			)
-		lineageTag: 07b2cd52-43d0-47fe-b1ad-f1b96eb19c36
+			
+			```
+		lineageTag: fa3e7552-d93c-441b-ad30-c1ea39307be1
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Step
-		lineageTag: bbaba2f4-2bba-4e4c-9788-cef678aa7458
+		lineageTag: b6d91a33-16ea-4a21-ab12-584dac2cefc9
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Step]
@@ -23,7 +25,7 @@ table Waterfall_Categories
 
 	column SortOrder
 		formatString: 0
-		lineageTag: 03e23ff3-4f02-4fcf-b14d-3ec24e35a152
+		lineageTag: c422d0d6-e067-4546-b033-1d7a6ddc0e2c
 		summarizeBy: sum
 		isNameInferred
 		sourceColumn: [SortOrder]
@@ -33,7 +35,6 @@ table Waterfall_Categories
 	partition Waterfall_Categories = calculated
 		mode: import
 		source =
-				
 				DATATABLE(
 				    "Step", STRING,
 				    "SortOrder", INTEGER,
@@ -44,5 +45,5 @@ table Waterfall_Categories
 				    }
 				)
 
-	annotation PBI_Id = 46b9697e84a247b59e94ef8b734ea9b1
+	annotation PBI_Id = 1908975e3c3544d28192ff6d6dc2a1b1
 

@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "SemanticModel",
-    "displayName": "NHL_Betting_Analytics"
+    "type": "Report",
+    "displayName": "NHL_Betting_Analytics_Test"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "feb04688-7a72-b99b-47aa-ba3d019968fd"
+    "logicalId": "a10fe748-6a43-ac4a-45e4-a9cd33dd1c67"
   }
 }

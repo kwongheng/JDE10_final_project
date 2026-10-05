@@ -1,11 +1,11 @@
 table game_features
-	lineageTag: 7b0f747f-7503-4290-bc2f-c2a9c5d08189
+	lineageTag: 5b719731-eb00-4e79-bebb-6cd63c2c9ff1
 	sourceLineageTag: [silver].[game_features]
 
 	column game_id
 		dataType: int64
 		formatString: 0
-		lineageTag: a713f24d-d551-4ad7-abda-e6a34c758f49
+		lineageTag: 6d11d9e8-ecad-43b6-940f-8c9db0eb12f9
 		sourceLineageTag: game_id
 		summarizeBy: sum
 		sourceColumn: game_id
@@ -15,7 +15,7 @@ table game_features
 	column season
 		dataType: int64
 		formatString: 0
-		lineageTag: bef3f9d7-c939-4d10-a7ba-a3fa6c659163
+		lineageTag: 4fecf8e3-c52f-4c6c-bbf8-7fa625f97083
 		sourceLineageTag: season
 		summarizeBy: sum
 		sourceColumn: season
@@ -25,7 +25,7 @@ table game_features
 	column date_time
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: 3bd85dff-4155-44dd-97fb-545c9959e88f
+		lineageTag: 754b5a2e-2dcb-4248-bb9a-b1e885d0a10c
 		sourceLineageTag: date_time
 		summarizeBy: none
 		sourceColumn: date_time
@@ -35,7 +35,7 @@ table game_features
 	column home_team_id
 		dataType: int64
 		formatString: 0
-		lineageTag: a544129b-8b41-4dfe-89bc-0525875e90dc
+		lineageTag: f6b7606c-8314-4812-afda-2e64ab71a9d7
 		sourceLineageTag: home_team_id
 		summarizeBy: sum
 		sourceColumn: home_team_id
@@ -45,7 +45,7 @@ table game_features
 	column home_goals
 		dataType: int64
 		formatString: 0
-		lineageTag: f21cfd7d-f59d-40a6-bf7e-de9ec5a3e551
+		lineageTag: 9d09006a-d62f-41ba-8ac7-69f202323583
 		sourceLineageTag: home_goals
 		summarizeBy: sum
 		sourceColumn: home_goals
@@ -55,7 +55,7 @@ table game_features
 	column away_goals
 		dataType: int64
 		formatString: 0
-		lineageTag: 94385a5b-2716-4905-a2fc-830ebf362333
+		lineageTag: a4869435-834c-4f2a-bf1b-0f35986d10ad
 		sourceLineageTag: away_goals
 		summarizeBy: sum
 		sourceColumn: away_goals
@@ -64,7 +64,7 @@ table game_features
 
 	column home_won
 		dataType: double
-		lineageTag: 28ffcff9-e7e6-41f8-b025-06a5480c2c81
+		lineageTag: 883c0b2c-7001-4faf-b52c-05bf5247bfc9
 		sourceLineageTag: home_won
 		summarizeBy: sum
 		sourceColumn: home_won
@@ -75,7 +75,7 @@ table game_features
 
 	column home_roll_goals
 		dataType: double
-		lineageTag: c704cea4-eacc-43a2-a823-3eb052e4ac7c
+		lineageTag: 09244029-970e-41ef-9c81-1edef67b1967
 		sourceLineageTag: home_roll_goals
 		summarizeBy: sum
 		sourceColumn: home_roll_goals
@@ -86,7 +86,7 @@ table game_features
 
 	column home_roll_shots
 		dataType: double
-		lineageTag: 07c003c9-7fbd-4908-a91d-99453805a15d
+		lineageTag: fc62a914-4d88-4dbe-8938-cb4bbb2aba04
 		sourceLineageTag: home_roll_shots
 		summarizeBy: sum
 		sourceColumn: home_roll_shots
@@ -97,7 +97,7 @@ table game_features
 
 	column home_roll_win_rate
 		dataType: double
-		lineageTag: 7bf22e83-e3a9-4760-9f4a-1b94313ae22e
+		lineageTag: 0b3bbcfe-a955-42ca-bda5-fd649adf0df8
 		sourceLineageTag: home_roll_win_rate
 		summarizeBy: sum
 		sourceColumn: home_roll_win_rate
@@ -108,7 +108,7 @@ table game_features
 
 	column home_is_b2b
 		dataType: double
-		lineageTag: 09d5af66-e934-4b39-9e58-63f1d95841aa
+		lineageTag: 158fe335-bfe7-47e7-b54f-37765e8f5b85
 		sourceLineageTag: home_is_b2b
 		summarizeBy: sum
 		sourceColumn: home_is_b2b
@@ -120,7 +120,7 @@ table game_features
 	column away_team_id
 		dataType: int64
 		formatString: 0
-		lineageTag: 9729897b-8b78-4d58-9594-6c91d5e463dc
+		lineageTag: 2dc7375d-df05-4681-b376-5f9e9e80c5b8
 		sourceLineageTag: away_team_id
 		summarizeBy: sum
 		sourceColumn: away_team_id
@@ -129,7 +129,7 @@ table game_features
 
 	column away_roll_goals
 		dataType: double
-		lineageTag: 6d69a424-e5c6-4c3e-a296-cf9b75dde07e
+		lineageTag: de21ab72-2296-4f43-933d-b27dd14b785e
 		sourceLineageTag: away_roll_goals
 		summarizeBy: sum
 		sourceColumn: away_roll_goals
@@ -140,7 +140,7 @@ table game_features
 
 	column away_roll_shots
 		dataType: double
-		lineageTag: 2d8ac2a2-7fd9-4339-9271-9345a035de28
+		lineageTag: 2eaaef70-e010-47f4-bff2-92ff8ab5570c
 		sourceLineageTag: away_roll_shots
 		summarizeBy: sum
 		sourceColumn: away_roll_shots
@@ -151,7 +151,7 @@ table game_features
 
 	column away_roll_win_rate
 		dataType: double
-		lineageTag: 390e6d77-3dfd-4661-85c7-3f1afecaa66c
+		lineageTag: 6c073245-f653-410d-9540-71b4d14602fc
 		sourceLineageTag: away_roll_win_rate
 		summarizeBy: sum
 		sourceColumn: away_roll_win_rate
@@ -162,7 +162,7 @@ table game_features
 
 	column away_is_b2b
 		dataType: double
-		lineageTag: 00224103-fc0f-4001-8311-6b511aeddce8
+		lineageTag: 2f2d2195-6eb6-45ce-910c-e91448d2f6a4
 		sourceLineageTag: away_is_b2b
 		summarizeBy: sum
 		sourceColumn: away_is_b2b
@@ -174,7 +174,7 @@ table game_features
 	column total_goals
 		dataType: int64
 		formatString: 0
-		lineageTag: 78501d5a-c6c5-4810-9766-a211d62366f3
+		lineageTag: 90dc5223-7c4b-4d66-8dbe-6a842d0bea62
 		sourceLineageTag: total_goals
 		summarizeBy: sum
 		sourceColumn: total_goals
@@ -183,7 +183,7 @@ table game_features
 
 	column target_over_5_5
 		dataType: double
-		lineageTag: 88f30d38-1483-427a-84df-f7a25a9dbb94
+		lineageTag: a9ca9eb6-63db-4d90-804c-20f818939add
 		sourceLineageTag: target_over_5_5
 		summarizeBy: sum
 		sourceColumn: target_over_5_5
@@ -194,7 +194,7 @@ table game_features
 
 	column target_over_6_5
 		dataType: double
-		lineageTag: 4c11ae3f-8b4f-4f08-b15a-56343528f0e4
+		lineageTag: 686de035-ef21-4c85-90c7-ec047d821237
 		sourceLineageTag: target_over_6_5
 		summarizeBy: sum
 		sourceColumn: target_over_6_5
@@ -205,7 +205,7 @@ table game_features
 
 	column target_puckline_home_plus1_5
 		dataType: double
-		lineageTag: 710aed46-2dd0-427f-8fcb-45cf683f1a5f
+		lineageTag: 73e91283-fd83-4c80-a238-9123121a4019
 		sourceLineageTag: target_puckline_home_plus1_5
 		summarizeBy: sum
 		sourceColumn: target_puckline_home_plus1_5
@@ -216,7 +216,7 @@ table game_features
 
 	column target_moneyline
 		dataType: double
-		lineageTag: 9833c08e-1374-47b0-b259-f1eaf6bd8cf6
+		lineageTag: 9ec629ad-906b-484e-8b18-39c62b7567d0
 		sourceLineageTag: target_moneyline
 		summarizeBy: sum
 		sourceColumn: target_moneyline
@@ -227,7 +227,7 @@ table game_features
 
 	column shots_diff
 		dataType: double
-		lineageTag: c6c9bef6-f793-41c1-9337-d25248ecd09b
+		lineageTag: 64c20be5-376a-45ca-a7fe-20565d13a784
 		sourceLineageTag: shots_diff
 		summarizeBy: sum
 		sourceColumn: shots_diff
@@ -238,7 +238,7 @@ table game_features
 
 	column win_rate_diff
 		dataType: double
-		lineageTag: 1a485717-b881-49f7-98ff-d02e353e3542
+		lineageTag: d1e0dc23-c9f8-402c-bf1e-cd0f0cad629a
 		sourceLineageTag: win_rate_diff
 		summarizeBy: sum
 		sourceColumn: win_rate_diff
@@ -249,7 +249,7 @@ table game_features
 
 	column rest_diff
 		dataType: double
-		lineageTag: b45000d5-5747-4878-86ac-ad33ee2157d8
+		lineageTag: 245a2978-12c0-46f6-9253-54ca193a5e34
 		sourceLineageTag: rest_diff
 		summarizeBy: sum
 		sourceColumn: rest_diff
@@ -263,5 +263,5 @@ table game_features
 		source
 			entityName: game_features
 			schemaName: silver
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 

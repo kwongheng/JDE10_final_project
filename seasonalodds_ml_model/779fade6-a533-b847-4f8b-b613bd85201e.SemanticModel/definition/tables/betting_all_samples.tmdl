@@ -1,58 +1,47 @@
 table betting_all_samples
-	lineageTag: 9bde599a-797c-4b27-b7a0-eaf0f0188099
+	lineageTag: b42b2508-b18b-4a21-b212-403fd03a64c0
 	sourceLineageTag: [gold].[betting_all_samples]
 
-	measure '1. Total Qualified Bets' =
-			
-			SUM('betting_season_tabulation'[Qualified_Bets_Offered])
+	measure '1. Total Qualified Bets' = SUM('betting_season_tabulation'[Qualified_Bets_Offered])
 		formatString: 0
-		lineageTag: 625b9020-8a02-4ebc-a570-8e1d0e8da779
+		lineageTag: 98cc7427-de4b-4924-9a3a-12e0116f8a8c
 
-		changedProperty = Name
-
-	measure '2. Selective Accuracy %' =
-			
-			AVERAGE('betting_season_tabulation'[Selective_Accuracy_Pct])
+	measure '2. Selective Accuracy %' = AVERAGE('betting_season_tabulation'[Selective_Accuracy_Pct])
 		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: bcd3be75-e4c6-45bd-b346-d271e21e6cb8
+		lineageTag: ab08af32-22f1-4894-ac71-3524e6151fd8
 
-		changedProperty = Name
+	measure '3. Avg EV %' = AVERAGE('betting_all_samples'[expected_value_pct])
+		lineageTag: c658a67f-bb79-4644-aabd-3d0b73019146
 
-		changedProperty = FormatString
-
-	measure '3. Avg EV %' =
-			
-			AVERAGE('betting_all_samples'[expected_value_pct])
-		lineageTag: 78a6081a-e220-409b-9820-89a07059a776
-
-		changedProperty = Name
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure '4. High EV Bets Count' = ```
-			
+	measure '4. High EV Bets Count' =
 			CALCULATE(
-			    COUNTROWS('betting_all_samples'), 
+			    COUNTROWS('betting_all_samples'),
 			    'betting_all_samples'[expected_value_pct] >= 2.0
 			)
-			```
 		formatString: 0
-		lineageTag: 8a2dee57-3643-4fbe-ac00-80da65acaba1
+		lineageTag: 4126a37c-3804-4bbe-81a3-b0ff881a0feb
 
-		changedProperty = Name
+	measure 'Committed Bets' = COUNTROWS('betting_all_samples')
+		formatString: 0
+		lineageTag: f3f96633-7553-487f-a1ee-30a33d31d8a3
+
+	measure 'Winning Bets' =
+			CALCULATE(
+			    COUNTROWS('betting_all_samples'),
+			    'betting_all_samples'[bet_outcome] = "WIN"
+			)
+		formatString: 0
+		lineageTag: 7db0a18c-5fce-4e0d-b8e3-dd0fded3ae06
+
+	measure 'Win Rate %' = DIVIDE([Winning Bets], [Committed Bets], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 30de5a1f-587e-4af9-ba47-1418254f0667
 
 	measure 'Total Capital Spent' = [Committed Bets] * 10
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 5d7d284d-2423-4f35-86f9-b46d17188330
-
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+		lineageTag: 59dd8c6f-ef23-4d45-9d34-cee9b0500634
 
 	measure 'Total Return' =
-			
 			SUMX(
 			    'betting_all_samples',
 			    VAR Odds = 'betting_all_samples'[picked_odds]
@@ -62,28 +51,21 @@ table betting_all_samples
 			            Outcome = "WIN",
 			            IF(
 			                Odds < 0,
-			                10 + (10 * (100 / ABS(Odds))),  // Favorite payout
-			                10 + (10 * (Odds / 100))        // Underdog payout
+			                10 + (10 * (100 / ABS(Odds))),
+			                10 + (10 * (Odds / 100))
 			            ),
-			            0                                   // LOSS yields $0 return
+			            0
 			        )
 			)
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 0934215a-7c7b-4ed0-8e24-1d1612307070
+		lineageTag: bee82b80-83df-4c9b-9e47-0a987035a55b
 
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
-
-	measure 'Total Net Gain' = ```
-			
+	measure 'Total Net Gain' =
 			SUMX(
 			    'betting_all_samples',
 			    VAR Odds = 'betting_all_samples'[picked_odds]
 			    VAR Outcome = 'betting_all_samples'[bet_outcome]
-			    VAR Payout = 
+			    VAR Payout =
 			        IF(
 			            Outcome = "WIN",
 			            IF(Odds < 0, 10 + (10 * (100 / ABS(Odds))), 10 + (10 * (Odds / 100))),
@@ -91,28 +73,43 @@ table betting_all_samples
 			        )
 			    RETURN Payout - 10
 			)
-			```
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: edfe45e6-8dd7-496a-a422-dbc158592c63
-
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+		lineageTag: 8a964108-a603-46f8-afeb-9271ee4a9933
 
 	measure 'ROI %' = DIVIDE([Total Net Gain], [Total Capital Spent], 0)
 		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: c3006eae-6b95-4522-8914-55e2806af388
+		lineageTag: 2b888640-acf0-4a1b-9e6b-acfd9a4ecab1
 
-		changedProperty = Name
+	measure 'Portfolio ROI %' = DIVIDE([Total Net Gain], [Total Capital Spent], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 93608bdb-13b7-4bbf-ba32-a8542747a781
 
-		changedProperty = FormatString
+	measure 'Overall Win Rate %' =
+			VAR TotalBets = COUNTROWS('betting_all_samples')
+			VAR TotalWins =
+			    CALCULATE(
+			        COUNTROWS('betting_all_samples'),
+			        'betting_all_samples'[bet_outcome] = "WIN"
+			    )
+			RETURN
+			    DIVIDE(TotalWins, TotalBets, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 463c5889-b025-4286-b931-ef40dc16df44
 
-	measure 'Team Label Custom' = ```
-			
+	measure 'Cumulative Net Gain' =
+			CALCULATE(
+			    [Total Net Gain],
+			    FILTER(
+			        ALLSELECTED('betting_all_samples'),
+			        'betting_all_samples'[game_date] <= MAX('betting_all_samples'[game_date])
+			    )
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: de91eb31-643b-4e87-98d5-d512afbda0ac
+
+	measure 'Team Label Custom' =
 			VAR TotalCommitted = COUNTROWS('betting_all_samples')
-			VAR TotalWins = 
+			VAR TotalWins =
 			    CALCULATE(
 			        COUNTROWS('betting_all_samples'),
 			        'betting_all_samples'[bet_outcome] = "WIN"
@@ -120,16 +117,28 @@ table betting_all_samples
 			VAR WinRate = DIVIDE(TotalWins, TotalCommitted, 0)
 			RETURN
 			    FORMAT(WinRate, "0.0%") & " (" & TotalWins & "/" & TotalCommitted & ")"
-			```
-		lineageTag: 756e59e0-80bc-462b-8646-0d343d8e1a7c
+		lineageTag: a278dc60-7144-4dc8-ab28-59663aa6fd09
 
-		changedProperty = Name
+	measure 'Team Label Clean' =
+			VAR TotalCommitted = COUNTROWS('betting_all_samples')
+			VAR TotalWins =
+			    CALCULATE(
+			        COUNTROWS('betting_all_samples'),
+			        'betting_all_samples'[bet_outcome] = "WIN"
+			    )
+			VAR WinRate = DIVIDE(TotalWins, TotalCommitted, 0)
+			RETURN
+			    IF(
+			        TotalCommitted > 0,
+			        FORMAT(WinRate, "0.0%") & " (" & TotalWins & "/" & TotalCommitted & " Bets)",
+			        BLANK()
+			    )
+		lineageTag: e284eb4d-7cf7-4f5b-a928-0f8aa6e6f8fe
 
-	measure 'Team Net Gain' = ```
-			
+	measure 'Team Net Gain' =
 			VAR TotalCommitted = COUNTROWS('betting_all_samples')
 			VAR TotalCapital = TotalCommitted * 10
-			VAR TotalReturn = 
+			VAR TotalReturn =
 			    SUMX(
 			        'betting_all_samples',
 			        VAR Odds = 'betting_all_samples'[picked_odds]
@@ -147,127 +156,23 @@ table betting_all_samples
 			    )
 			RETURN
 			    TotalReturn - TotalCapital
-			```
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 43defd21-8291-4212-97a4-a9c57611d395
+		lineageTag: 2672b56a-a504-4fbc-8817-67c574cbd11c
 
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
-
-	measure 'Top Team Win Rate %' = ```
-			
+	measure 'Top Team Win Rate %' =
 			VAR TotalCommitted = COUNTROWS('betting_all_samples')
-			VAR TotalWins = 
+			VAR TotalWins =
 			    CALCULATE(
 			        COUNTROWS('betting_all_samples'),
 			        'betting_all_samples'[bet_outcome] = "WIN"
 			    )
 			RETURN
 			    DIVIDE(TotalWins, TotalCommitted, 0)
-			```
-		lineageTag: 83dfca66-e91b-4bf4-9d75-b2d67ea849a8
-
-		changedProperty = Name
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Team Label Clean' = ```
-			
-			VAR TotalCommitted = COUNTROWS('betting_all_samples')
-			VAR TotalWins = 
-			    CALCULATE(
-			        COUNTROWS('betting_all_samples'),
-			        'betting_all_samples'[bet_outcome] = "WIN"
-			    )
-			VAR WinRate = DIVIDE(TotalWins, TotalCommitted, 0)
-			RETURN
-			    IF(
-			        TotalCommitted > 0,
-			        FORMAT(WinRate, "0.0%") & " (" & TotalWins & "/" & TotalCommitted & " Bets)",
-			        BLANK()
-			    )
-			```
-		lineageTag: a0211c1a-fee0-4785-b9bb-3857bd5adcd0
-
-		changedProperty = Name
-
-	measure 'Cumulative Net Gain' =
-			
-			CALCULATE(
-			    [Total Net Gain],
-			    FILTER(
-			        ALLSELECTED('betting_all_samples'),
-			        'betting_all_samples'[game_date] <= MAX('betting_all_samples'[game_date])
-			    )
-			)
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 901c7bb4-79a3-48d8-8ac7-2f1bf8e70146
-
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
-
-	measure 'Overall Win Rate %' = ```
-			
-			VAR TotalBets = COUNTROWS('betting_all_samples')
-			VAR TotalWins = 
-			    CALCULATE(
-			        COUNTROWS('betting_all_samples'),
-			        'betting_all_samples'[bet_outcome] = "WIN"
-			    )
-			RETURN
-			    DIVIDE(TotalWins, TotalBets, 0)
-			```
-		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: 18bbd02d-86a4-497f-8bf5-999b11c81554
-
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-	measure 'Portfolio ROI %' =
-			
-			DIVIDE([Total Net Gain], [Total Capital Spent], 0)
-		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: 45777b97-a03a-4a86-9d7e-f665ef47b784
-
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-	measure 'Committed Bets' = COUNTROWS('betting_all_samples')
-		formatString: 0
-		lineageTag: e9bbb0f1-60eb-424a-82db-3cee8205045e
-
-		changedProperty = Name
-
-	measure 'Winning Bets' =
-			
-			CALCULATE(
-			    COUNTROWS('betting_all_samples'),
-			    'betting_all_samples'[bet_outcome] = "WIN"
-			)
-		formatString: 0
-		lineageTag: 8dded691-3297-4ad9-b4c6-bc558673719e
-
-		changedProperty = Name
-
-	measure 'Win Rate %' = DIVIDE([Winning Bets], [Committed Bets], 0)
-		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: d8745b10-e24d-4ff6-90e1-a6934fcfbbf6
-
-		changedProperty = Name
-
-		changedProperty = FormatString
+		lineageTag: 6c1216f3-ba50-4d53-b75b-8a8761ce20e1
 
 	column Category
 		dataType: string
-		lineageTag: ca7a9a98-163b-429f-887e-5c0e6b6733ef
+		lineageTag: c39db490-d786-44ff-99bd-dd797ca90641
 		sourceLineageTag: Category
 		summarizeBy: none
 		sourceColumn: Category
@@ -277,7 +182,7 @@ table betting_all_samples
 	column game_id
 		dataType: int64
 		formatString: 0
-		lineageTag: dbfc8451-9460-46d1-8a17-70ee9a58da5d
+		lineageTag: 500c4007-873f-41b9-8337-1f86ebe75794
 		sourceLineageTag: game_id
 		summarizeBy: sum
 		sourceColumn: game_id
@@ -287,7 +192,7 @@ table betting_all_samples
 	column game_date
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: a27cb4d3-3c67-43ce-9114-37b68681708e
+		lineageTag: 7ad6c027-46c9-4424-b4c9-6e7bdae0e63c
 		sourceLineageTag: game_date
 		summarizeBy: none
 		sourceColumn: game_date
@@ -296,7 +201,7 @@ table betting_all_samples
 
 	column home_team
 		dataType: string
-		lineageTag: 86733187-45b1-4e4b-9cdb-a63a9d9cb8cb
+		lineageTag: 54ec3a9d-3ecd-45e0-b354-d5b5982dde6c
 		sourceLineageTag: home_team
 		summarizeBy: none
 		sourceColumn: home_team
@@ -305,7 +210,7 @@ table betting_all_samples
 
 	column away_team
 		dataType: string
-		lineageTag: 4853e22a-dc20-4048-98d8-1b344b733d80
+		lineageTag: 69ff1225-5e7e-4e33-8a8e-dce2b0966b30
 		sourceLineageTag: away_team
 		summarizeBy: none
 		sourceColumn: away_team
@@ -314,7 +219,7 @@ table betting_all_samples
 
 	column picked_side
 		dataType: string
-		lineageTag: f54541ae-f780-4669-a345-3fd687c08357
+		lineageTag: b0ffc07e-5220-4b95-9cb2-cb6d30e19c01
 		sourceLineageTag: picked_side
 		summarizeBy: none
 		sourceColumn: picked_side
@@ -324,7 +229,7 @@ table betting_all_samples
 	column picked_odds
 		dataType: int64
 		formatString: 0
-		lineageTag: 2a6f5839-9b9a-4a67-8d25-c14196389448
+		lineageTag: 016c8c80-3125-4ca4-8fa4-b5833489eaaf
 		sourceLineageTag: picked_odds
 		summarizeBy: sum
 		sourceColumn: picked_odds
@@ -333,7 +238,7 @@ table betting_all_samples
 
 	column model_prob
 		dataType: double
-		lineageTag: b9e4ab2b-6f21-4ee1-a0a0-0b20501ec06b
+		lineageTag: 1f84e0d6-872b-4996-bbb8-64fef873b1d1
 		sourceLineageTag: model_prob
 		summarizeBy: sum
 		sourceColumn: model_prob
@@ -344,7 +249,7 @@ table betting_all_samples
 
 	column book_prob
 		dataType: double
-		lineageTag: d0977d70-b6b4-4c09-9c74-5ca3695369ad
+		lineageTag: f49d9878-af27-441c-a958-d85a0e70a367
 		sourceLineageTag: book_prob
 		summarizeBy: sum
 		sourceColumn: book_prob
@@ -355,7 +260,7 @@ table betting_all_samples
 
 	column confidence_metric
 		dataType: double
-		lineageTag: 2471ad42-69d4-4191-ae83-b82dde90fe7f
+		lineageTag: e724a80b-8f8b-49dd-8b87-cfe687727643
 		sourceLineageTag: confidence_metric
 		summarizeBy: sum
 		sourceColumn: confidence_metric
@@ -366,7 +271,7 @@ table betting_all_samples
 
 	column expected_value_pct
 		dataType: double
-		lineageTag: 88961d8b-fd29-458b-824b-17ce9adcf0ff
+		lineageTag: ae3716ff-e0b4-4291-8b45-7ea838a099b2
 		sourceLineageTag: expected_value_pct
 		summarizeBy: sum
 		sourceColumn: expected_value_pct
@@ -377,7 +282,7 @@ table betting_all_samples
 
 	column bet_outcome
 		dataType: string
-		lineageTag: ad14965e-e023-4a50-82c6-f890f5307ac7
+		lineageTag: 0133218d-5304-407d-b6fa-1d0403cfae03
 		sourceLineageTag: bet_outcome
 		summarizeBy: none
 		sourceColumn: bet_outcome
@@ -385,7 +290,6 @@ table betting_all_samples
 		annotation SummarizationSetBy = Automatic
 
 	column EV_Tier =
-			
 			SWITCH(
 			    TRUE(),
 			    'betting_all_samples'[expected_value_pct] >= 15.0, "Massive Value (+15%+)",
@@ -393,67 +297,41 @@ table betting_all_samples
 			    'betting_all_samples'[expected_value_pct] >= 2.0,  "Moderate Value (+2% to +5%)",
 			    'betting_all_samples'[expected_value_pct] < 2.0, "Low/Negative Edge (< +2%)"
 			)
-		lineageTag: bf8201c5-46ef-46da-b4a5-b1f34a4ea340
+		lineageTag: f83c3496-28f7-498a-ad1d-c9e4c375ff48
 		summarizeBy: none
 		expressionContext: userContext
 
-		changedProperty = Name
-
-		annotation SummarizationSetBy = Automatic
-
 	column EV_Category =
-			
 			SWITCH(
 			    TRUE(),
 			    'betting_all_samples'[expected_value_pct] >= 15.0, "🟢 Massive Edge (+15%+ EV)",
 			    'betting_all_samples'[expected_value_pct] >= 2.0,  "🟡 Good Edge (+2% to +15% EV)",
 			    "🔴 Low / No Edge (< +2% EV)"
 			)
-		lineageTag: 878b84df-c1ed-49f5-864a-12c0179f1c2e
+		lineageTag: 853ce170-20cb-478c-84eb-c7045a244e7b
 		summarizeBy: none
 		expressionContext: userContext
 
-		changedProperty = Name
-
-		annotation SummarizationSetBy = Automatic
-
-	column Bet_Category_Label = ```
-			
+	column Bet_Category_Label =
 			SWITCH(
 			    TRUE(),
 			    'betting_all_samples'[Category] = "Moneyline (Home Win)", "Moneyline (Home Win)",
 			    'betting_all_samples'[Category] = "Puck Line (Home +1.5)", "Puckline (Home +1.5)",
 			    'betting_all_samples'[Category] = "Totals (Over 5.5)", "Totals (Over 5.5)",
-			    
-			    // Fallback logic if evaluating based on picked_side text values:
 			    CONTAINSSTRING('betting_all_samples'[picked_side], "+1.5") || CONTAINSSTRING('betting_all_samples'[picked_side], "-1.5"), "Puckline (Home +1.5)",
 			    CONTAINSSTRING('betting_all_samples'[picked_side], "OVER") || CONTAINSSTRING('betting_all_samples'[picked_side], "UNDER"), "Totals (Over 5.5)",
 			    "Moneyline (Home Win)"
 			)
-			```
-		lineageTag: 7ac278ed-d965-4abe-a255-8154216bf0b1
+		lineageTag: 2b49763a-83ba-44ab-b248-ab042b5b8bef
 		summarizeBy: none
 		expressionContext: userContext
 
-		changedProperty = Name
-
-		annotation SummarizationSetBy = Automatic
-
 	column EV_Decimal = 'betting_all_samples'[expected_value_pct] / 100
-		lineageTag: ef5bac78-ec8d-4317-8828-268500c6c7f2
+		lineageTag: 62063908-93f4-403c-9928-5e674a52b734
 		summarizeBy: sum
 		expressionContext: userContext
 
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Odds_Band =
-			
 			SWITCH(
 			    TRUE(),
 			    'betting_all_samples'[picked_odds] < -150, "1. Heavy Favorite (<-150)",
@@ -461,17 +339,12 @@ table betting_all_samples
 			    'betting_all_samples'[picked_odds] <= 150, "3. Moderate Underdog (+101 to +150)",
 			    "4. High Underdog (>+150)"
 			)
-		lineageTag: 6b34182a-0a31-4cd0-9deb-a19a98778895
+		lineageTag: b4c58c06-0d1a-416b-baf2-5924b8f183c2
 		summarizeBy: none
 		expressionContext: userContext
 
-		changedProperty = Name
-
-		annotation SummarizationSetBy = Automatic
-
 	column EV_Tier_Expanded =
-			
-			VAR EV = 'betting_all_samples'[EV_Decimal]  // Replace with your actual EV% column name
+			VAR EV = 'betting_all_samples'[EV_Decimal]
 			RETURN
 			    SWITCH(
 			        TRUE(),
@@ -481,18 +354,14 @@ table betting_all_samples
 			        EV >= 0.00, "4. Low Edge (0-4.9%)",
 			        "5. Negative EV (<0%)"
 			    )
-		lineageTag: 7ae7e0c1-99c5-48f9-ad86-ab43a90dde60
+		lineageTag: 23c59b3d-f7d1-4cc8-9b94-74072a1ccd34
 		summarizeBy: none
 		expressionContext: userContext
-
-		changedProperty = Name
-
-		annotation SummarizationSetBy = Automatic
 
 	partition betting_all_samples = entity
 		mode: directLake
 		source
 			entityName: betting_all_samples
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 

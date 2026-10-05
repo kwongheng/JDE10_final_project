@@ -1,9 +1,0 @@
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
-  "version": "4.0",
-  "datasetReference": {
-    "byConnection": {
-      "connectionString": "Data Source=powerbi://api.powerbi.com/v1.0/myorg/JDE10;initial catalog=NHL_Betting_Analytics;integrated security=ClaimsToken;semanticmodelid=39df48aa-a0ff-46d6-89c8-06581cc0bb78"
-    }
-  }
-}

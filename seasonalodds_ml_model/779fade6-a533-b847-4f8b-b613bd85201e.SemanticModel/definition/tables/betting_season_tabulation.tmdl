@@ -1,27 +1,17 @@
 table betting_season_tabulation
-	lineageTag: a1fa39a4-e9a3-4997-9a94-d536e3b9cb91
+	lineageTag: 6918eef7-e079-4160-bb56-6c672e49f237
 	sourceLineageTag: [gold].[betting_season_tabulation]
 
-	measure 'Season Capital Spent' =
-			
-			SUM('betting_season_tabulation'[Qualified_Bets_Offered]) * 10
+	measure 'Season Capital Spent' = SUM('betting_season_tabulation'[Qualified_Bets_Offered]) * 10
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 0c6238c2-8112-4a77-a348-342dd4765039
-
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+		lineageTag: f81b878c-49eb-41de-8c18-346babe9ee01
 
 	measure 'Season Net Gain' =
-			
 			SWITCH(
 			    SELECTEDVALUE('betting_season_tabulation'[Category]),
 			    "Moneyline (Home Win)", 184.20,
 			    "Puck Line (Home +1.5)", 2146.00,
 			    "Totals (Over 5.5)", 193.00,
-			    // Grand Total calculation when aggregated across all rows:
 			    SUMX(
 			        'betting_season_tabulation',
 			        SWITCH(
@@ -34,40 +24,19 @@ table betting_season_tabulation
 			    )
 			)
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: ca03ec5f-5016-49a8-86b5-f33145987f87
-
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
-
-	measure Measure
-		lineageTag: 150bde52-60bd-44ad-ab14-afe8fb749584
-
-		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+		lineageTag: ed13fbe5-d9b2-414b-a17d-98602fd43d8b
 
 	measure 'Season Total Return' = [Season Capital Spent] + [Season Net Gain]
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 9f36b53d-0092-4c82-8730-47a9c3675003
-
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+		lineageTag: 8b0afe54-8eba-4bf4-a900-9ccd39aeb2d6
 
 	measure 'Season ROI %' = DIVIDE([Season Net Gain], [Season Capital Spent], 0)
 		formatString: #,0.00%;-#,0.00%;#,0.00%
-		lineageTag: bb63418d-a5f4-4a3f-be66-8b25c6c39052
-
-		changedProperty = Name
-
-		changedProperty = FormatString
+		lineageTag: aba46051-b894-472a-b285-708cc13bec7b
 
 	column Category
 		dataType: string
-		lineageTag: e0a00bc0-a615-4d93-ba4e-1b64db28961c
+		lineageTag: 7b29d071-3e64-4099-ac50-44c9c4936baf
 		sourceLineageTag: Category
 		summarizeBy: none
 		sourceColumn: Category
@@ -77,7 +46,7 @@ table betting_season_tabulation
 	column Total_Season_Games
 		dataType: int64
 		formatString: 0
-		lineageTag: 9e3b3453-d633-41e2-b5d2-b0b38b7f81d6
+		lineageTag: 67acce9d-ddbc-41ff-84c0-ae3da3a14951
 		sourceLineageTag: Total_Season_Games
 		summarizeBy: none
 		sourceColumn: Total_Season_Games
@@ -87,7 +56,7 @@ table betting_season_tabulation
 	column Qualified_Bets_Offered
 		dataType: int64
 		formatString: 0
-		lineageTag: a4fec7fd-17f1-4a26-acf3-96133c2a1a7f
+		lineageTag: 936fceca-f658-4226-b4a9-ba810a6f7f15
 		sourceLineageTag: Qualified_Bets_Offered
 		summarizeBy: none
 		sourceColumn: Qualified_Bets_Offered
@@ -97,7 +66,7 @@ table betting_season_tabulation
 	column Correct_Predictions_WIN
 		dataType: int64
 		formatString: 0
-		lineageTag: c8c5ef30-82a4-49ef-a6b9-888315014067
+		lineageTag: 6eec9960-9845-46d6-b270-e693275e4301
 		sourceLineageTag: Correct_Predictions_WIN
 		summarizeBy: none
 		sourceColumn: Correct_Predictions_WIN
@@ -107,7 +76,7 @@ table betting_season_tabulation
 	column Wrong_Predictions_LOSS
 		dataType: int64
 		formatString: 0
-		lineageTag: 491d7f58-861b-48c5-9c1b-5300e92a2d2e
+		lineageTag: 9e8ead39-f675-4e15-b1a8-62a6f7bfe00f
 		sourceLineageTag: Wrong_Predictions_LOSS
 		summarizeBy: none
 		sourceColumn: Wrong_Predictions_LOSS
@@ -117,7 +86,7 @@ table betting_season_tabulation
 	column No_Bets_Low_Confidence
 		dataType: int64
 		formatString: 0
-		lineageTag: 68c0a472-1c37-42e6-8d48-98afb5b5c127
+		lineageTag: 8619ec21-bf8e-4c4f-9c7a-18b8bbb08b0e
 		sourceLineageTag: No_Bets_Low_Confidence
 		summarizeBy: none
 		sourceColumn: No_Bets_Low_Confidence
@@ -126,18 +95,16 @@ table betting_season_tabulation
 
 	column Selective_Accuracy_Pct
 		dataType: string
-		lineageTag: e5e4130c-bd7a-45b4-a638-afb1860f410a
+		lineageTag: 99379bea-bea1-43ee-a05a-1174ba0ead76
 		sourceLineageTag: Selective_Accuracy_Pct
 		summarizeBy: none
 		sourceColumn: Selective_Accuracy_Pct
-
-		changedProperty = FormatString
 
 		annotation SummarizationSetBy = Automatic
 
 	column Skipped_Games_Pct
 		dataType: string
-		lineageTag: 43e6d4bd-bbdc-479c-8de6-e5235e02ac7f
+		lineageTag: 4fcfccb4-6e0d-4018-8502-462cd8e2c21d
 		sourceLineageTag: Skipped_Games_Pct
 		summarizeBy: none
 		sourceColumn: Skipped_Games_Pct
@@ -149,5 +116,5 @@ table betting_season_tabulation
 		source
 			entityName: betting_season_tabulation
 			schemaName: gold
-			expressionSource: 'DirectLake - NHL_db'
+			expressionSource: 'DirectLake - NHL_data'
 
