@@ -18,7 +18,7 @@ steps:
     git remote remove github 2>/dev/null || true
 
     git remote add github \
-      https://$(GITHUB_USERNAME):$(GITHUB_PAT)@github.com/kwongheng/JDE10_final_project.git
+      https://x-access-token:$(GITHUB_PAT)@github.com/kwongheng/JDE10_final_project.git
 
     git push github --mirror
   displayName: 'Mirror Azure DevOps repo to GitHub'
