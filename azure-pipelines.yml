@@ -5,7 +5,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-- group: github-secrets
+- group: github-credentials
 
 steps:
 - checkout: self
