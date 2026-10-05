@@ -1,0 +1,32 @@
+trigger: none
+pr: none
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- group: github-credentials
+
+steps:
+- checkout: self
+  fetchDepth: 0
+
+- bash: |
+    set -e
+
+    echo "Source Repository: $(Build.Repository.Name)"
+    echo "Branch: $(Build.SourceBranchName)"
+
+    git remote remove github 2>/dev/null || true
+
+    git remote add github \
+      https://x-access-token:$(GITHUB_PAT)@github.com/kwongheng/JDE10_final_project.git
+
+    # Push all branches
+    git push github --all --force
+
+    # Push all tags
+    git push github --tags --force
+
+    echo "GitHub sync complete"
+  displayName: 'Sync Azure DevOps Repo to GitHub'
