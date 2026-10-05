@@ -14,32 +14,17 @@ steps:
 - bash: |
     set -e
 
-    echo "Source Repository: $(Build.Repository.Name)"
-    echo "Branch: $(Build.SourceBranchName)"
-
     git remote remove github 2>/dev/null || true
 
     git remote add github \
       https://x-access-token:$(GITHUB_PAT)@github.com/kwongheng/JDE10_final_project.git
 
-    # Push all branches
-    git push github --all --force
-
-    # Push all tags
-    git push github --tags --force
-
-    echo "GitHub sync complete"
-
-    echo "=== Azure DevOps HEAD ==="
+    echo "Azure DevOps HEAD:"
     git rev-parse HEAD
 
-    echo "=== GitHub HEAD ==="
-    git ls-remote github refs/heads/main
+    echo "Pushing current commit to GitHub main..."
 
-    echo "=== Branches ==="
-    git branch -a
+    git push github HEAD:refs/heads/main --force
 
-    echo "=== Last 5 commits ==="
-    git log --oneline -5
-
+    echo "GitHub sync complete"
   displayName: 'Sync Azure DevOps Repo to GitHub'
