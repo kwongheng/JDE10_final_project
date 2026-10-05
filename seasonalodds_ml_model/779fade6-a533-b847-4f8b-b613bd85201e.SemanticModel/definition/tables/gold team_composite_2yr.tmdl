@@ -1,0 +1,98 @@
+table 'gold team_composite_2yr'
+	lineageTag: d99e14af-d298-4517-8502-7169455ba79d
+	sourceLineageTag: [gold].[team_composite_2yr]
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a8455215-7733-4e33-bad5-8f3f0d251f54
+		sourceLineageTag: team_id
+		summarizeBy: sum
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column gf_per_gm
+		dataType: double
+		lineageTag: c8980397-2dac-4166-9300-45ad1be7cd97
+		sourceLineageTag: gf_per_gm
+		summarizeBy: sum
+		sourceColumn: gf_per_gm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ga_per_gm
+		dataType: double
+		lineageTag: 4715e15b-92fc-48a5-aa40-f36b457ec35e
+		sourceLineageTag: ga_per_gm
+		summarizeBy: sum
+		sourceColumn: ga_per_gm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column goal_diff_per_gm
+		dataType: double
+		lineageTag: d5732f70-6197-498c-8f8e-cd32c1fe516b
+		sourceLineageTag: goal_diff_per_gm
+		summarizeBy: sum
+		sourceColumn: goal_diff_per_gm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column corsi_for_per_gm
+		dataType: double
+		lineageTag: c22596f7-9b5a-4b6c-8615-180a777ee754
+		sourceLineageTag: corsi_for_per_gm
+		summarizeBy: sum
+		sourceColumn: corsi_for_per_gm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pp_pct
+		dataType: double
+		lineageTag: c0a2c10f-49c9-40ff-80ba-46486f8dbdf5
+		sourceLineageTag: pp_pct
+		summarizeBy: sum
+		sourceColumn: pp_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pk_pct
+		dataType: double
+		lineageTag: eaecd075-a4c5-445f-b049-c4d3be367854
+		sourceLineageTag: pk_pct
+		summarizeBy: sum
+		sourceColumn: pk_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column save_pct_proxy
+		dataType: double
+		lineageTag: f2b1dede-0373-4875-a779-41821f935ef7
+		sourceLineageTag: save_pct_proxy
+		summarizeBy: sum
+		sourceColumn: save_pct_proxy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'gold team_composite_2yr' = entity
+		mode: directLake
+		source
+			entityName: team_composite_2yr
+			schemaName: gold
+			expressionSource: 'DirectLake - NHL_data'
+

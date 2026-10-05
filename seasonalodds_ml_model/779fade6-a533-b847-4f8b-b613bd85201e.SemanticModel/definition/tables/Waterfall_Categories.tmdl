@@ -1,0 +1,48 @@
+table Waterfall_Categories
+	lineageTag: 98975dee-8e9d-472f-9bef-cccde6dd42c1
+
+	measure 'Waterfall Value' =
+			
+			SWITCH(
+			    SELECTEDVALUE(Waterfall_Categories[Step]),
+			    "Capital Wagered", -1 * [Total Capital Spent],
+			    "Gross Payouts Returned", [Total Capital Spent] + [Total Net Gain],
+			    "Net Profit", [Total Net Gain]
+			)
+		lineageTag: 07b2cd52-43d0-47fe-b1ad-f1b96eb19c36
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Step
+		lineageTag: bbaba2f4-2bba-4e4c-9788-cef678aa7458
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Step]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder
+		formatString: 0
+		lineageTag: 03e23ff3-4f02-4fcf-b14d-3ec24e35a152
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [SortOrder]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Waterfall_Categories = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Step", STRING,
+				    "SortOrder", INTEGER,
+				    {
+				        {"Capital Wagered", 1},
+				        {"Gross Payouts Returned", 2},
+				        {"Net Profit", 3}
+				    }
+				)
+
+	annotation PBI_Id = 46b9697e84a247b59e94ef8b734ea9b1
+

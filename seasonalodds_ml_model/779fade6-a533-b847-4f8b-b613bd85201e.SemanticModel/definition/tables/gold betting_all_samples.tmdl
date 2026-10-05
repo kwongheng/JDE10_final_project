@@ -1,0 +1,130 @@
+table 'gold betting_all_samples'
+	lineageTag: b42b2508-b18b-4a21-b212-403fd03a64c0
+	sourceLineageTag: [gold].[betting_all_samples]
+
+	column Category
+		dataType: string
+		lineageTag: c39db490-d786-44ff-99bd-dd797ca90641
+		sourceLineageTag: Category
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column game_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 500c4007-873f-41b9-8337-1f86ebe75794
+		sourceLineageTag: game_id
+		summarizeBy: sum
+		sourceColumn: game_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column game_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7ad6c027-46c9-4424-b4c9-6e7bdae0e63c
+		sourceLineageTag: game_date
+		summarizeBy: none
+		sourceColumn: game_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column home_team
+		dataType: string
+		lineageTag: 54ec3a9d-3ecd-45e0-b354-d5b5982dde6c
+		sourceLineageTag: home_team
+		summarizeBy: none
+		sourceColumn: home_team
+
+		annotation SummarizationSetBy = Automatic
+
+	column away_team
+		dataType: string
+		lineageTag: 69ff1225-5e7e-4e33-8a8e-dce2b0966b30
+		sourceLineageTag: away_team
+		summarizeBy: none
+		sourceColumn: away_team
+
+		annotation SummarizationSetBy = Automatic
+
+	column picked_side
+		dataType: string
+		lineageTag: b0ffc07e-5220-4b95-9cb2-cb6d30e19c01
+		sourceLineageTag: picked_side
+		summarizeBy: none
+		sourceColumn: picked_side
+
+		annotation SummarizationSetBy = Automatic
+
+	column picked_odds
+		dataType: int64
+		formatString: 0
+		lineageTag: 016c8c80-3125-4ca4-8fa4-b5833489eaaf
+		sourceLineageTag: picked_odds
+		summarizeBy: sum
+		sourceColumn: picked_odds
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_prob
+		dataType: double
+		lineageTag: 1f84e0d6-872b-4996-bbb8-64fef873b1d1
+		sourceLineageTag: model_prob
+		summarizeBy: sum
+		sourceColumn: model_prob
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column book_prob
+		dataType: double
+		lineageTag: f49d9878-af27-441c-a958-d85a0e70a367
+		sourceLineageTag: book_prob
+		summarizeBy: sum
+		sourceColumn: book_prob
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column confidence_metric
+		dataType: double
+		lineageTag: e724a80b-8f8b-49dd-8b87-cfe687727643
+		sourceLineageTag: confidence_metric
+		summarizeBy: sum
+		sourceColumn: confidence_metric
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column expected_value_pct
+		dataType: double
+		lineageTag: ae3716ff-e0b4-4291-8b45-7ea838a099b2
+		sourceLineageTag: expected_value_pct
+		summarizeBy: sum
+		sourceColumn: expected_value_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bet_outcome
+		dataType: string
+		lineageTag: 0133218d-5304-407d-b6fa-1d0403cfae03
+		sourceLineageTag: bet_outcome
+		summarizeBy: none
+		sourceColumn: bet_outcome
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'gold betting_all_samples' = entity
+		mode: directLake
+		source
+			entityName: betting_all_samples
+			schemaName: gold
+			expressionSource: 'DirectLake - NHL_data'
+

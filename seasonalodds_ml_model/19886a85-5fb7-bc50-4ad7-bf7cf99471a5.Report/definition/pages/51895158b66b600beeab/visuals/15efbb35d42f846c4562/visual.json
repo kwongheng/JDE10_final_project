@@ -1,0 +1,447 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "15efbb35d42f846c4562",
+  "position": {
+    "x": 16.171399994735872,
+    "y": 321.81085989524382,
+    "z": 1,
+    "height": 407.519279867344,
+    "width": 1888.8195193851498,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Benchmark_Comparison"
+                    }
+                  },
+                  "Property": "Asset_Class"
+                }
+              },
+              "queryRef": "Benchmark_Comparison.Asset_Class",
+              "nativeQueryRef": "Asset_Class"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Benchmark_Comparison"
+                    }
+                  },
+                  "Property": "Typical_Annual_Return"
+                }
+              },
+              "queryRef": "Benchmark_Comparison.Typical_Annual_Return",
+              "nativeQueryRef": "Typical_Annual_Return"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Benchmark_Comparison"
+                    }
+                  },
+                  "Property": "Time_Horizon"
+                }
+              },
+              "queryRef": "Benchmark_Comparison.Time_Horizon",
+              "nativeQueryRef": "Time_Horizon"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Benchmark_Comparison"
+                    }
+                  },
+                  "Property": "Capital_Risk_Profile"
+                }
+              },
+              "queryRef": "Benchmark_Comparison.Capital_Risk_Profile",
+              "nativeQueryRef": "Capital_Risk_Profile"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Benchmark_Comparison"
+                    }
+                  },
+                  "Property": "Model_Yield_Ratio"
+                }
+              },
+              "queryRef": "Benchmark_Comparison.Model_Yield_Ratio",
+              "nativeQueryRef": "Model_Yield_Ratio"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Benchmark_Comparison"
+                  }
+                },
+                "Property": "Typical_Annual_Return"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F2937'"
+                    }
+                  }
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "defaultColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 2
+                }
+              }
+            ],
+            "metadata": "Benchmark_Comparison.Asset_Class"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Aggregation": {
+                                  "Expression": {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Benchmark_Comparison"
+                                        }
+                                      },
+                                      "Property": "Asset_Class"
+                                    }
+                                  },
+                                  "Function": 3
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'\"NHL Betting Model Strategy\"'"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#10B981'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Benchmark_Comparison.Asset_Class"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "370D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Benchmark_Comparison.Asset_Class"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "370D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Benchmark_Comparison.Typical_Annual_Return"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "370D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Benchmark_Comparison.Time_Horizon"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "370D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Benchmark_Comparison.Capital_Risk_Profile"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "370D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Benchmark_Comparison.Model_Yield_Ratio"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Condensed'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Comparative Return Benchmark Matrix'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "30D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "209e5352de5619e48707",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Benchmark_Comparison"
+              }
+            },
+            "Property": "Asset_Class"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d04dedc67ea8e2c17dad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Benchmark_Comparison"
+              }
+            },
+            "Property": "Typical_Annual_Return"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e39bcaf0f23a0caf1318",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Benchmark_Comparison"
+              }
+            },
+            "Property": "Time_Horizon"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7c2c5f873bd4eb26b034",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Benchmark_Comparison"
+              }
+            },
+            "Property": "Capital_Risk_Profile"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9bf8b0956516d2656fa2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Benchmark_Comparison"
+              }
+            },
+            "Property": "Model_Yield_Ratio"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

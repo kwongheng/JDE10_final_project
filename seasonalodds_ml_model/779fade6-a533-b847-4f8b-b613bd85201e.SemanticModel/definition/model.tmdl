@@ -1,0 +1,31 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DirectLake - NHL_db","Benchmark_Comparison","DirectLake - NHL_data"]
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit","DaxQueryView_Desktop"]
+
+ref table betting_all_samples
+ref table betting_season_tabulation
+ref table betting_summary_unpivoted
+ref table team_composite_2yr
+ref table top_3_teams_per_market
+ref table game_features
+ref table team_info
+ref table Waterfall_Categories
+ref table Benchmark_Comparison
+ref table 'gold betting_all_samples'
+ref table 'gold betting_season_tabulation'
+ref table 'gold betting_summary_unpivoted'
+ref table 'gold team_composite_2yr'
+ref table 'gold top_3_teams_per_market'
+ref table 'silver game_features'
+ref table 'silver team_info'
+

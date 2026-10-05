@@ -1,0 +1,53 @@
+table Benchmark_Comparison
+	lineageTag: 4be31de9-9981-4240-879d-edea4eb9abb3
+
+	column Asset_Class
+		dataType: string
+		lineageTag: 369ded0c-137b-48dc-be51-08749336e17b
+		summarizeBy: none
+		sourceColumn: Asset_Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column Typical_Annual_Return
+		dataType: string
+		lineageTag: 00a16292-aeeb-422c-9e52-3209f00ae496
+		summarizeBy: none
+		sourceColumn: Typical_Annual_Return
+
+		annotation SummarizationSetBy = Automatic
+
+	column Time_Horizon
+		dataType: string
+		lineageTag: eb8f4136-09f3-48f1-8845-2702759df74d
+		summarizeBy: none
+		sourceColumn: Time_Horizon
+
+		annotation SummarizationSetBy = Automatic
+
+	column Capital_Risk_Profile
+		dataType: string
+		lineageTag: a67ed885-4350-4732-875e-e91bed12b860
+		summarizeBy: none
+		sourceColumn: Capital_Risk_Profile
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model_Yield_Ratio
+		dataType: string
+		lineageTag: 5c629036-90fd-4979-a03c-9045a9d43c07
+		summarizeBy: none
+		sourceColumn: Model_Yield_Ratio
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Benchmark_Comparison = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("bZHRSsNAEEV/ZQgIFTW2jVVfjdoqtCJWBS19WLNDsnSzU3Yntr6I/+Af+iXOpgiifctmdu659+5slgzNGvXBPfoaLnBJwXBI9pMs7e7A18cnZOlgR85jKhaooZPJv14fJuS4CrsyGDXKK8cow0O4QeUPntGTDN6P0tM1XJmyQg9PBq1O5vuzZKpejSsDXLvQyGKB0Ll0mlY1Oo56feFtAw8iuAtPQvjPPVdLw8rCrSfGglFH/iDNtvBH9IreRVrcI78krxghJ6dj7qOf3AP5kPMEtWnqwzG5ctNRp//HyJhWcGfCQuTaKiVZQTVGB1l6vMVBrmzMreHBGYZ734S28eMf8umGPLS4Ni8WRXdjouVHS6Sx9TxRfoEMj2QVG2v4LTL7MfXI04orGDZO/wLfXI0hR2bpH6KIhSlHoTIu7vXEQNv4FFUgJ2123k9+PfSZLckbrmpTiKUpCzOwKeReTC8XcnRFVYsnyFWQZ+2l3fVuMp9/Aw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Asset_Class = _t, Typical_Annual_Return = _t, Time_Horizon = _t, Capital_Risk_Profile = _t, Model_Yield_Ratio = _t])
+				in
+				  Source
+
+	annotation PBI_ResultType = Table
+
