@@ -1,5 +1,356 @@
 {
   "properties": {
-    "activities": []
+    "activities": [
+      {
+        "name": "nb_02_landing_to_bronze",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "nb_01_test_game_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "nb_01_test_dbutils",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "66176966-2a0c-45bb-bac9-6ffa8c5f222e",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325"
+        }
+      },
+      {
+        "name": "nb_01_test_game_silver",
+        "type": "TridentNotebook",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "b64fa860-1b33-462d-ab9d-4449c8364982",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325"
+        }
+      },
+      {
+        "name": "nb_03_2_game_silver",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "nb_03_1_team_info_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "nb_03_1_player_info_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "e1ab0ded-cb8c-4b5a-aa24-9a04feef098f",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325",
+          "parameters": {
+            "RUN_PIPELINE": {
+              "value": true,
+              "type": "bool"
+            }
+          }
+        }
+      },
+      {
+        "name": "nb_03_1_player_info_silver",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "nb_02_landing_to_bronze",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "0ba9bf86-6b4b-43a1-adbd-64f97fb9abe2",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325",
+          "parameters": {
+            "RUN_PIPELINE": {
+              "value": true,
+              "type": "bool"
+            }
+          }
+        }
+      },
+      {
+        "name": "nb_03_1_team_info_silver",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "nb_02_landing_to_bronze",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "42cc73d0-74f8-4e62-a06d-c289c1e867b5",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325",
+          "parameters": {
+            "RUN_PIPELINE": {
+              "value": true,
+              "type": "bool"
+            }
+          }
+        }
+      },
+      {
+        "name": "nb_03_3_game_teams_stats_silver",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "nb_03_2_game_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "7917aac4-c594-4903-98b1-0c81908af2f2",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325",
+          "parameters": {
+            "RUN_PIPELINE": {
+              "value": true,
+              "type": "bool"
+            }
+          }
+        }
+      },
+      {
+        "name": "nb_03_3_game_skater_stats_silver",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "nb_03_2_game_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "312319a0-4daf-42a3-a913-5f217e0eeaf1",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325",
+          "parameters": {
+            "RUN_PIPELINE": {
+              "value": true,
+              "type": "bool"
+            }
+          }
+        }
+      },
+      {
+        "name": "nb_03_3_game_goalie_stats_silver",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "nb_03_2_game_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "eaf29d4a-c6e1-4fc7-bb9f-97e2c26fe40d",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325",
+          "parameters": {
+            "RUN_PIPELINE": {
+              "value": true,
+              "type": "bool"
+            }
+          }
+        }
+      },
+      {
+        "name": "nb_03_4_game_plays_star_silver",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "nb_03_3_game_goalie_stats_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "nb_03_3_game_skater_stats_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "nb_03_3_game_teams_stats_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "459b498c-3f21-46f3-88ff-0f45182bb8ab",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325"
+        }
+      },
+      {
+        "name": "nb_03_4_game_feature_silver",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "nb_03_3_game_teams_stats_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "1df9c769-a586-4ead-a650-e262486fe175",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325"
+        }
+      },
+      {
+        "name": "nb_01_test_dbutils",
+        "type": "TridentNotebook",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "aa6ca797-8773-4ef7-8b05-957d6641c341",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325"
+        }
+      },
+      {
+        "name": "nb_04_games_players_forecast_gold",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "nb_03_4_game_plays_star_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "314e12b6-2a19-436c-ae19-99310f277d1d",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325"
+        }
+      },
+      {
+        "name": "nb_04_2_ml_pl_totals_prediction_gold",
+        "type": "TridentNotebook",
+        "dependsOn": [
+          {
+            "activity": "nb_03_4_game_feature_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "notebookId": "7aa1c6de-6e59-46fb-a2c7-d9ed078df98c",
+          "workspaceId": "d1dd054c-cf41-40a7-a4a7-dbf9eeec9325"
+        }
+      }
+    ],
+    "variables": {
+      "testResult": {
+        "type": "String"
+      }
+    }
   }
 }
