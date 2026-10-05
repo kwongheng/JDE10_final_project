@@ -30,19 +30,16 @@ steps:
 
     echo "GitHub sync complete"
 
-    echo "Azure DevOps HEAD:"
+    echo "=== Azure DevOps HEAD ==="
     git rev-parse HEAD
 
-    echo
-    echo "GitHub HEAD:"
+    echo "=== GitHub HEAD ==="
     git ls-remote github refs/heads/main
 
-    echo
-    echo "File count in Azure DevOps:"
-    git ls-tree -r --name-only HEAD | wc -l
-    
-    echo
-    echo "First 50 files:"
-    git ls-tree -r --name-only HEAD | head -50
+    echo "=== Branches ==="
+    git branch -a
+
+    echo "=== Last 5 commits ==="
+    git log --oneline -5
 
   displayName: 'Sync Azure DevOps Repo to GitHub'
