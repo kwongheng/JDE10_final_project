@@ -248,6 +248,90 @@
             }
           }
         }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#118DFF'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "betting_summary_unpivoted"
+                          }
+                        },
+                        "Property": "Metric_Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Committed Bets'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#12239E'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "betting_summary_unpivoted"
+                          }
+                        },
+                        "Property": "Metric_Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Skipped Games'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
       ]
     },
     "visualContainerObjects": {

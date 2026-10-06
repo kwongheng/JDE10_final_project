@@ -207,6 +207,90 @@
             }
           }
         }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E66C37'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "betting_summary_unpivoted"
+                          }
+                        },
+                        "Property": "Metric_Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Wrong LOSS'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#6B007B'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "betting_summary_unpivoted"
+                          }
+                        },
+                        "Property": "Metric_Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Correct WIN'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
       ]
     },
     "visualContainerObjects": {

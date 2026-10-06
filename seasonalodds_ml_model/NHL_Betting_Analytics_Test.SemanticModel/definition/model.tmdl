@@ -18,7 +18,5 @@ ref table betting_season_tabulation
 ref table betting_summary_unpivoted
 ref table team_composite_2yr
 ref table top_3_teams_per_market
-ref table game_features
 ref table team_info
-ref table Waterfall_Categories
 
